@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Meijuna</title>
+  
+  <subtitle>没有比脚更长的路，走过去，前面是个天！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-12-24T14:50:50.655Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>MeiJuna</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mackdown 基本语法</title>
+    <link href="http://yoursite.com/2018/12/24/Mackdown/"/>
+    <id>http://yoursite.com/2018/12/24/Mackdown/</id>
+    <published>2018-12-24T01:35:48.462Z</published>
+    <updated>2018-12-24T14:50:50.655Z</updated>
+    
+    <content type="html"><![CDATA[<p>Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><h3 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h3><p>在想要设置为标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。</p><p>注：标准语法一般在#后跟个空格再写文字</p><p>示例：</p><pre><code># 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题</code></pre><hr><h3 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h3><ul><li><em>斜体</em><br>要加粗的文字左右分别用1个 * 号包起来</li><li><strong>加粗</strong><br>要加粗的文字左右分别用2个 * 号包起来</li><li><strong><em>斜体+加粗</em></strong><br>要加粗的文字左右分别用3个 * 号包起来</li><li><del>删除</del><br>要加粗的文字左右分别用2个 ~ 号包起来</li></ul><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Markdown是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。&lt;/p&gt;
+&lt;h3 id=&quot;一、标题&quot;&gt;&lt;a href=&quot;#一、标题&quot; class=&quot;headerlink&quot; title=&quot;一、标题&quot;&gt;&lt;/a&gt;一、标题&lt;/h3&gt;&lt;p&gt;在想要设
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Mackdown" scheme="http://yoursite.com/tags/Mackdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优雅的使用Sublime Text3</title>
+    <link href="http://yoursite.com/2018/12/24/%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8%20Subline%20Text3%20/"/>
+    <id>http://yoursite.com/2018/12/24/优雅的使用 Subline Text3 /</id>
+    <published>2018-12-24T00:44:03.905Z</published>
+    <updated>2018-12-24T14:48:57.137Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-插件下载安装方法"><a href="#1-插件下载安装方法" class="headerlink" title="1.插件下载安装方法"></a>1.插件下载安装方法</h3><p>快捷键<code>ctrl + shift + p</code>, 打开sublime命令工具，输入 <code>Install Package</code></p><h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2.插件"></a>2.插件</h3><p><em>html/css/js Prettify</em> 作用：<em>格式化代码</em> 快捷键 <em>  <code>Ctrl + Shift + H</code></em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-插件下载安装方法&quot;&gt;&lt;a href=&quot;#1-插件下载安装方法&quot; class=&quot;headerlink&quot; title=&quot;1.插件下载安装方法&quot;&gt;&lt;/a&gt;1.插件下载安装方法&lt;/h3&gt;&lt;p&gt;快捷键&lt;code&gt;ctrl + shift + p&lt;/code&gt;, 打开su
+      
+    
+    </summary>
+    
+      <category term="IDE工具" scheme="http://yoursite.com/categories/IDE%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="sbulime" scheme="http://yoursite.com/tags/sbulime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="http://yoursite.com/2018/12/21/hello-world/"/>
+    <id>http://yoursite.com/2018/12/21/hello-world/</id>
+    <published>2018-12-21T15:03:47.376Z</published>
+    <updated>2018-12-24T08:34:21.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是第一条测试内容.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是第一条测试内容.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+</feed>
