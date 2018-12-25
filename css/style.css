@@ -34,6 +34,11 @@ html {
 
 body {
   margin: 0;
+  /*background:url(../images/avatar.jpg);*/
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
 }
 
 article,
@@ -5654,6 +5659,7 @@ pre code {
 
 .sidebar {
   background-color: #fdfdfd;
+
 }
 
 .sidebar .slimContent {
@@ -5915,6 +5921,7 @@ body.no-sidebar .sidebar {
   border-bottom: 1px solid #f2f2f2;
 }
 
+
 .main .article-list article:last-child {
   border-bottom: 0;
 }
@@ -6162,6 +6169,8 @@ body.no-sidebar .sidebar {
 
 .footer .copyright {
   font-size: 12px;
+  display: none;
+
 }
 
 .footer .copyright a {
