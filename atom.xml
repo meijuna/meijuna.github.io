@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-25T08:12:01.191Z</updated>
+  <updated>2018-12-25T11:45:15.795Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>优雅的使用 Subline Text3</title>
+    <link href="http://yoursite.com/2018/12/25/sbulime/"/>
+    <id>http://yoursite.com/2018/12/25/sbulime/</id>
+    <published>2018-12-25T11:44:56.643Z</published>
+    <updated>2018-12-25T11:45:15.795Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-插件下载安装方法"><a href="#1-插件下载安装方法" class="headerlink" title="1.插件下载安装方法"></a>1.插件下载安装方法</h3><p>快捷键<code>ctrl + shift + p</code>, 打开sublime命令工具，输入 <code>Install Package</code></p><h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2.插件"></a>2.插件</h3><p><em>html/css/js Prettify</em> 作用：<em>格式化代码</em> 快捷键 <em>  <code>Ctrl + Shift + H</code></em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-插件下载安装方法&quot;&gt;&lt;a href=&quot;#1-插件下载安装方法&quot; class=&quot;headerlink&quot; title=&quot;1.插件下载安装方法&quot;&gt;&lt;/a&gt;1.插件下载安装方法&lt;/h3&gt;&lt;p&gt;快捷键&lt;code&gt;ctrl + shift + p&lt;/code&gt;, 打开su
+      
+    
+    </summary>
+    
+      <category term="IDE工具" scheme="http://yoursite.com/categories/IDE%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="sublime" scheme="http://yoursite.com/tags/sublime/"/>
+    
+  </entry>
   
   <entry>
     <title>在Hexo博客上添加可爱的Live 2D模型</title>
