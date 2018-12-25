@@ -68,11 +68,11 @@
   </entry>
   
   <entry>
-    <title>优雅的使用Sublime Text3</title>
+    <title>Mackdown 基本语法</title>
     <link href="http://yoursite.com/2018/12/24/%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8%20Subline%20Text3%20/"/>
     <id>http://yoursite.com/2018/12/24/优雅的使用 Subline Text3 /</id>
     <published>2018-12-24T00:44:03.905Z</published>
-    <updated>2018-12-24T14:48:57.137Z</updated>
+    <updated>2018-12-25T10:59:32.878Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-插件下载安装方法"><a href="#1-插件下载安装方法" class="headerlink" title="1.插件下载安装方法"></a>1.插件下载安装方法</h3><p>快捷键<code>ctrl + shift + p</code>, 打开sublime命令工具，输入 <code>Install Package</code></p><h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2.插件"></a>2.插件</h3><p><em>html/css/js Prettify</em> 作用：<em>格式化代码</em> 快捷键 <em>  <code>Ctrl + Shift + H</code></em></p>]]></content>
     
@@ -85,10 +85,10 @@
     
     </summary>
     
-      <category term="IDE工具" scheme="http://yoursite.com/categories/IDE%E5%B7%A5%E5%85%B7/"/>
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="sbulime" scheme="http://yoursite.com/tags/sbulime/"/>
+      <category term="Mackdown" scheme="http://yoursite.com/tags/Mackdown/"/>
     
   </entry>
   
