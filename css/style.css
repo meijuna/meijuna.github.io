@@ -3600,6 +3600,7 @@ svg {
 }
 
 .mt-2x {
+  display: none;
   margin-top: 20px !important;
 }
 
