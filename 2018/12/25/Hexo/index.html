@@ -39,8 +39,6 @@
   <link rel="stylesheet" href="/css/style.css">
   
   
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
-  
   
   
 </head>
@@ -418,8 +416,6 @@
     
   <section id="comments">
   	
-
-    
   </section>
 
 
@@ -523,26 +519,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
-    
-<script src="//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
-<script>
-var gitment = new Gitment({
-  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
-  // https://github.com/imsun/gitment/issues/55
-  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '在Hexo博客上添加可爱的Live 2D模型', 
-  owner: 'meijuna', // 可以是你的GitHub用户名，也可以是github id
-  repo: 'https://meijuna.github.io/',
-  oauth: {
-    client_id: '1728af103fdb7ee16f45',
-    client_secret: 'b3e198fc656666f0213b3a843a6ea96bbd972e51',
-  }
-})
-gitment.render('comments')
-</script>
-
-
-
 
 
 
