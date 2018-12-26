@@ -44,14 +44,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/repository/index.html</loc>
-    
-    <lastmod>2018-10-04T14:11:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/links/index.html</loc>
+    <loc>http://yoursite.com//404.html</loc>
     
     <lastmod>2018-10-04T14:11:17.000Z</lastmod>
     
@@ -65,14 +58,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://yoursite.com/links/index.html</loc>
     
     <lastmod>2018-10-04T14:11:17.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com//404.html</loc>
+    <loc>http://yoursite.com/repository/index.html</loc>
+    
+    <lastmod>2018-10-04T14:11:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2018-10-04T14:11:17.000Z</lastmod>
     
