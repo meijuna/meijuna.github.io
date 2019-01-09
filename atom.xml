@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-09T03:23:51.613Z</updated>
+  <updated>2019-01-09T03:24:49.369Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>前端sssss笔记</title>
-    <link href="http://yoursite.com/2019/01/09/%E5%89%8D%E7%AB%AFsssss%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2019/01/09/前端sssss笔记/</id>
-    <published>2019-01-09T03:23:51.248Z</published>
-    <updated>2019-01-09T03:23:51.613Z</updated>
-    
-    <content type="html"><![CDATA[<p>sssssssss</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;sssssssss&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
   
   <entry>
     <title>Git 使用</title>
@@ -73,7 +47,7 @@
     <link href="http://yoursite.com/2018/12/26/%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/12/26/笔记/</id>
     <published>2018-12-26T12:45:14.899Z</published>
-    <updated>2018-12-28T02:09:07.007Z</updated>
+    <updated>2019-01-09T03:24:33.006Z</updated>
     
     <content type="html"><![CDATA[<h2 id="web标准"><a href="#web标准" class="headerlink" title="web标准"></a>web标准</h2><h6 id="1-web标准是由W3C和其他标准化组织制定的一系列标准的集合。主要包括结构-Structure-、表现-Presentation-、和行为-Behavior-三个方面"><a href="#1-web标准是由W3C和其他标准化组织制定的一系列标准的集合。主要包括结构-Structure-、表现-Presentation-、和行为-Behavior-三个方面" class="headerlink" title="1. web标准是由W3C和其他标准化组织制定的一系列标准的集合。主要包括结构(Structure)、表现(Presentation)、和行为(Behavior) 三个方面"></a>1. web标准是由W3C和其他标准化组织制定的一系列标准的集合。主要包括结构(Structure)、表现(Presentation)、和行为(Behavior) 三个方面</h6><h6 id="2-html是超文本标记语言，是描述网页的一种语言。"><a href="#2-html是超文本标记语言，是描述网页的一种语言。" class="headerlink" title="2. html是超文本标记语言，是描述网页的一种语言。"></a>2. html是超文本标记语言，是描述网页的一种语言。</h6><p>   超文本：因为它可以加入图片，声音，动画，多媒体，还可以从一个文件跳转到另一个文件</p><h6 id="3-html-根节点-，header-头部-里面有标题-title-，bidy-文档主体"><a href="#3-html-根节点-，header-头部-里面有标题-title-，bidy-文档主体" class="headerlink" title="3. html: 根节点 ，header 头部 里面有标题: title ，bidy: 文档主体"></a>3. html: 根节点 ，header 头部 里面有标题: title ，bidy: 文档主体</h6><h6 id="4-标签：-分为-双标签-lt-gt-lt-gt-和-单标签-lt-gt"><a href="#4-标签：-分为-双标签-lt-gt-lt-gt-和-单标签-lt-gt" class="headerlink" title="4. 标签： 分为 双标签 : &lt;&gt;&lt;/&gt;    和   单标签 &lt;/&gt;"></a>4. 标签： 分为 双标签 : &lt;&gt;&lt;/&gt;    和   单标签 &lt;/&gt;</h6><h6 id="5-DOCTYPE-html"><a href="#5-DOCTYPE-html" class="headerlink" title="5. !DOCTYPE html"></a>5. !DOCTYPE html</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span> //html5</span><br></pre></td></tr></table></figure><h6 id="6-meta-charset-“UTF-8"><a href="#6-meta-charset-“UTF-8" class="headerlink" title="6. meta charset = “UTF-8"></a>6. meta charset = “UTF-8</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset = &quot;UTF-8&quot; /&gt; //字符集 UTF-8 国际通用 全世界都需要用的字符</span><br></pre></td></tr></table></figure><h6 id="7-div-span-没有语意，只要来布局"><a href="#7-div-span-没有语意，只要来布局" class="headerlink" title="7.div + span 没有语意，只要来布局"></a>7.div + span 没有语意，只要来布局</h6><h6 id="8-img-图片"><a href="#8-img-图片" class="headerlink" title="8. img 图片"></a>8. img 图片</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;&quot; alt=&quot;&quot; title=&quot;&quot; border=&quot;10 &quot;/&gt; //alt=&quot;图片替换文字 title:鼠标悬停显示文字 border:边框</span><br></pre></td></tr></table></figure><h6 id="9-链接标签-a"><a href="#9-链接标签-a" class="headerlink" title="9. 链接标签 a"></a>9. 链接标签 a</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;url地址&quot; target=&quot;_blank（新窗口，目标窗口的弹出方式)&quot;&gt;文本or图像&lt;/a&gt; //url:外部链接 or内壁u链接</span><br></pre></td></tr></table></figure><h6 id="10-锚点-a"><a href="#10-锚点-a" class="headerlink" title="10.锚点 a"></a>10.锚点 a</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#id&quot;&gt;&lt;/a&gt; &lt;div id=&quot;id&quot;&gt;&lt;/id&gt;</span><br></pre></td></tr></table></figure><h6 id="11-base-标签"><a href="#11-base-标签" class="headerlink" title="11.base 标签"></a>11.base 标签</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header里面： &lt;base target=&quot;_blanrk&quot; /&gt;  当前自己打开：target=&quot;_self&quot; //让页面的整体标签都行打开窗口</span><br></pre></td></tr></table></figure><h6 id="12-特殊字符"><a href="#12-特殊字符" class="headerlink" title="12. 特殊字符"></a>12. 特殊字符</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;p$gt ;内容&amp;lt;/p&amp;gt;   &amp;:$amp , $copy:版权</span><br></pre></td></tr></table></figure>]]></content>
     
