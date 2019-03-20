@@ -4,7 +4,7 @@
   <url>
     <loc>http://yoursite.com/2018/12/26/HTML%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2019-03-20T12:17:28.439Z</lastmod>
+    <lastmod>2019-03-20T12:28:13.845Z</lastmod>
     
   </url>
   
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/links/index.html</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-10-04T14:11:17.000Z</lastmod>
     
@@ -66,6 +66,13 @@
   
   <url>
     <loc>http://yoursite.com/repository/index.html</loc>
+    
+    <lastmod>2018-10-04T14:11:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/links/index.html</loc>
     
     <lastmod>2018-10-04T14:11:17.000Z</lastmod>
     
@@ -80,13 +87,6 @@
   
   <url>
     <loc>http://yoursite.com//404.html</loc>
-    
-    <lastmod>2018-10-04T14:11:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-10-04T14:11:17.000Z</lastmod>
     
