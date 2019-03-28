@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2019/01/03/Git-%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-03-28T13:08:52.913Z</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2018/12/26/HTML%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-03-28T12:57:12.622Z</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/03/28/%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</loc>
     <lastmod>2019-03-28T08:27:57.533Z</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/28/a/</loc>
-    <lastmod>2019-03-28T06:22:50.846Z</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/21/%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2019-03-21T02:58:02.637Z</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2018/12/24/Mackdown%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2019-03-19T06:23:15.120Z</lastmod>
@@ -24,8 +21,5 @@
   </url>  <url>
     <loc>http://yoursite.com/2018/12/25/sbulime/</loc>
     <lastmod>2019-03-19T03:41:01.275Z</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/01/03/Git-%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2019-01-09T03:24:49.369Z</lastmod>
   </url>
 </urlset>
