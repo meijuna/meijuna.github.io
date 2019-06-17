@@ -73,11 +73,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>express Node 核心框架</title>
     <link href="http://yoursite.com/2019/06/17/express%E6%A1%86%E6%9E%B6/"/>
     <id>http://yoursite.com/2019/06/17/express框架/</id>
     <published>2019-06-17T13:50:29.972Z</published>
-    <updated>2019-06-17T00:51:50.527Z</updated>
+    <updated>2019-06-17T14:07:29.559Z</updated>
     
     <content type="html"><![CDATA[<h1 id="express-Node-核心框架"><a href="#express-Node-核心框架" class="headerlink" title="express Node 核心框架"></a>express Node 核心框架</h1><p>express是一个功能极简, 完全是由路由和中间件构成的一个web开发框架,是非侵入式的框架</p><h2 id="1-为什么要学习-express"><a href="#1-为什么要学习-express" class="headerlink" title="1. 为什么要学习 express ?"></a>1. 为什么要学习 express ?</h2><pre><code>- express 是 Node 的核心框架- express 可以帮助我们快速构建 web 服务器 / api 服务器- express 提供了一个快速生成工具 express-generator   - 快速生成工具： 帮助我们快速创建一个项目的工具</code></pre><h2 id="2-安装方式"><a href="#2-安装方式" class="headerlink" title="2. 安装方式"></a>2. 安装方式</h2><h3 id="1-全局安装"><a href="#1-全局安装" class="headerlink" title="1. 全局安装"></a>1. 全局安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm i express-generator -g  </span><br><span class="line">or </span><br><span class="line"><span class="meta">$</span> yarn add express-generator -g</span><br></pre></td></tr></table></figure><h3 id="2-npx-安装"><a href="#2-npx-安装" class="headerlink" title="2. npx 安装"></a>2. npx 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(如果npm版本在 5.2+，那可以不用全局，用npx)</span><br><span class="line"></span><br><span class="line">$ npx express -e express_demo</span><br><span class="line"></span><br><span class="line">-e : 指的是我们使用一个叫 ejs 的模板（ejs.js 可以兼容html标签, 可以在标签中写 js ）</span><br></pre></td></tr></table></figure><h2 id="3-项目目录"><a href="#3-项目目录" class="headerlink" title="3. 项目目录"></a>3. 项目目录</h2><ul><li><p>bin </p><ul><li>www 启动了一个静态服务器 （ web服务器 ）</li></ul></li><li><p>node_modules 这个项目的依赖包</p></li><li><p>public 静态资源文件 ( html，css，images)</p></li><li><p>routes 路由文件夹</p></li><li><p>view</p><ul><li>xxx.ejs （ 项目模板 )</li></ul></li></ul><ul><li>app.js  ( 这个项目的入口文件 )</li></ul><h2 id="4-app-js-文件代码解读"><a href="#4-app-js-文件代码解读" class="headerlink" title="4. app.js 文件代码解读"></a>4. app.js 文件代码解读</h2><pre><code>- app对象的功能  1.  通过app.use来使用具有特定功能的函数 ( 又叫中间件 )- 中间件分类  1.  应用中间件 （ cors )  2.  路由中间件 app.get( &apos;/&apos; , (req, res, next ) =&gt; { } )   3.  错误处理中间件 function( err, req, res, next ) { }</code></pre><h2 id="5-express-创建-api-服务器-（-创建接口-）"><a href="#5-express-创建-api-服务器-（-创建接口-）" class="headerlink" title="5. express 创建 api 服务器 （ 创建接口 ）"></a>5. express 创建 api 服务器 （ 创建接口 ）</h2><ul><li>api  服务器是给前端提供接口数据</li><li>api 服务器需要使用的给测试工具来测试，不能用浏览器展示</li><li>注意： 后端个前端发送的数据类型是 JSON 字符串，前端需要 JSON.parse() 转换成对象</li></ul><h2 id="6-restful-api-规则"><a href="#6-restful-api-规则" class="headerlink" title="6. restful api 规则"></a>6. restful api 规则</h2><p>​    restful aip 规则 是一个暴露接口的规则 ，实现是一个接口使用不同的数据请求方式来实现不同的功能</p><h2 id="7-数据请求格式"><a href="#7-数据请求格式" class="headerlink" title="7. 数据请求格式"></a>7. 数据请求格式</h2><h3 id="1-get"><a href="#1-get" class="headerlink" title="1. get"></a>1. get</h3><ul><li>发送数据时，携带的参数时，形式是 Query string Parameters</li><li><p>后端 req.query 获取前端传来的数据</p><h3 id="2-post"><a href="#2-post" class="headerlink" title="2. post"></a>2. post</h3></li><li><p>发送数据时，携带的参数时，形式是 Form Data</p></li><li>前端 req.body 获取前端传来的数据</li></ul><h2 id="8-ecj-模板"><a href="#8-ecj-模板" class="headerlink" title="8. ecj 模板"></a>8. ecj 模板</h2><p><a href="https://ejs.bootcss.com/" target="_blank" rel="noopener">ecj 官网</a></p><p>EJS 是一套简单的模板语言，帮你利用 JavaScript 代码生成 HTML 页面。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ejs模板语法:</span><br><span class="line"></span><br><span class="line">    &lt;% jsCode %&gt;执行正常js代码</span><br><span class="line">    &lt;% =data %&gt;转移输出</span><br><span class="line">    &lt;% -&quot;data&quot; %&gt;非转义输出</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -90,6 +90,12 @@
     
     </summary>
     
+      <category term="express" scheme="http://yoursite.com/categories/express/"/>
+    
+    
+      <category term="Node" scheme="http://yoursite.com/tags/Node/"/>
+    
+      <category term="框架" scheme="http://yoursite.com/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -300,30 +306,6 @@
     
     
       <category term="Mackdown" scheme="http://yoursite.com/tags/Mackdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇博客</title>
-    <link href="http://yoursite.com/2018/12/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2018/12/21/我的第一条博客/</id>
-    <published>2018-12-21T15:03:47.376Z</published>
-    <updated>2019-03-19T05:59:24.902Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hello, 欢迎来到我的博客，以后我会不定时的发布博客，记录生活！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Hello, 欢迎来到我的博客，以后我会不定时的发布博客，记录生活！&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
     
   </entry>
   
