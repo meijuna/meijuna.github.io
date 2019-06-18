@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="MeiJuna的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>Hexo + github 搭建个人博客</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">MeiJuna</a>
+  <a class="face-img" href="/">
+    <img src="https://avatars0.githubusercontent.com/u/28977046?s=400&amp;u=430ddb4a4bb56956162100daf3ef6f79a5b65bd2&amp;v=4">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    Hexo + github 搭建个人博客
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-06-18T11:24:38.051Z" itemprop="datePublished">2019-06-18</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-06-18T05:40:49.030Z" itemprop="dateUpdated">2019-06-18</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h3 id="1-博客维护"><a href="#1-博客维护" class="headerlink" title="1.博客维护"></a>1.博客维护</h3><h5 id="1-发布文章"><a href="#1-发布文章" class="headerlink" title="1.发布文章"></a>1.发布文章</h5><p>在站点文件夹中打开 git bash，输入如下命令部署和发布文章:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+<p><strong>建议</strong>：在使用 <code>hexo g</code> 部署之后，可以先使用 <code>hexo s</code> 运行本地站点，然后在浏览器输入地址 <a href="http://lacolhost:4000/" target="_blank" rel="noopener">http://lacolhost:4000/</a> 查看运行结果，检查无误后再使用 <code>hexo d</code> 发布</p>
+<h5 id="2-新建博客时添加对应的图片文件夹"><a href="#2-新建博客时添加对应的图片文件夹" class="headerlink" title="2.新建博客时添加对应的图片文件夹"></a>2.新建博客时添加对应的图片文件夹</h5><p>将 站点配置文件 中的 post_asset_folde 选项的值设置为 true</p>
+<p>在站点文件夹中打开 git bash，输入命令 npm install hexo-asset-image –save 安装插件</p>
+<p>这样，当使用 hexo new title 创建文章时，将同时在 source/_post 文件夹中生成一个与 title 同名的文件夹，我们只需将图片放进此文件夹中，然后在文章中通过 Markdown 语法进行引用即可</p>
+<p>例如，在资源文件夹（就是那个与 title 同名的文件夹）中添加图片 example.PNG，则可以在对应的文章中使用语句 <img src="/2019/06/18/Hexo + github 搭建个人博客/title/example.PNG" alt="示例图片" title="示例图片"> 添加图片</p>
+<h5 id="3-模板设置"><a href="#3-模板设置" class="headerlink" title="3.模板设置"></a>3.模板设置</h5><p>当我们使用命令 <code>hexo new &quot;title&quot;</code> 创建文章时，Hexo 会根据 <code>/scaffolds/post.md</code> 对新文章进行初始化</p>
+<p>换言之，<code>/scaffolds/post.md</code> 就是新文章的 <strong>模板</strong>，所以我们可以修改它来适应自己的写作习惯</p>
+<p>在每篇利用 Hexo 创建的文章的开头，都会有对文章进行说明的文字，叫做 <strong>文章头部</strong></p>
+<p>文章的头部除了可以设置文章标题、发布日期等基础信息外，还可以为文章添加标签、分类等</p>
+<p>一个简单的示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: Title</span><br><span class="line">date: YYYY-MM-DD HH:MM:SS</span><br><span class="line">tags: [tag1, tag2, ...]</span><br><span class="line">categories: category</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：属性和属性值之间必须有一个空格，否则会解析错误</p>
+<h3 id="2-搭建博客"><a href="#2-搭建博客" class="headerlink" title="2.搭建博客"></a>2.搭建博客</h3><h4 id="1-搭建github博客"><a href="#1-搭建github博客" class="headerlink" title="1.搭建github博客"></a>1.搭建github博客</h4><p>1.github新建博客文件，库名要所有者名字一样，如：<strong>meijuna.github.io</strong> 的格式</p>
+<p>2.Settings =&gt; 选择一个主题保存 就可以访问 meijuna.github.io 了 </p>
+<h4 id="2-Hexo搭建本地博客"><a href="#2-Hexo搭建本地博客" class="headerlink" title="2.Hexo搭建本地博客"></a>2.Hexo搭建本地博客</h4><p><strong>hexo命令</strong></p>
+<p>hexo s(server)  –&gt; 启动本地服务</p>
+<p>hexo  clean –&gt; 清除缓存</p>
+<p>hexo g (generate) –&gt; 创建网页</p>
+<p>hexo d (deploy) –&gt; 同步到github</p>
+<p>1.安装node.js + git </p>
+<p>以Windows环境安装node.js为例，首先登录<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官网</a>，选择适合自己的版本进行下载，然后进行安装。</p>
+<p>登录<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>选择版本进行下载，基本一路<strong>next</strong>下去即可轻松完成安装。</p>
+<p>2.首先在本地磁盘中建立一个Hexo文件夹用于存储本地文件(做本地文件保存以及测试使用)</p>
+<p>3.下载Hexo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>4.初始化博客空间，生成博客运作所需要的文件，接下来安装依赖包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>5.同步Github,允许公共访问</p>
+<p>1.首先找到我们的博客仓库，并拷贝仓库地址：git clone 主题仓库地址 放到 <strong>themes</strong> 文件夹下</p>
+<p>2.打开_config.yml 文件配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">    type: git</span><br><span class="line">    repo: https://github.com/meijuna/meijuna.github.io</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<p>3.最后执行控制台命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git —save //安装部署插件</span><br><span class="line"></span><br><span class="line">hexo d //部署到github</span><br></pre></td></tr></table></figure>
+<p>就用 meijuna.github.io 访问博客了</p>
+<h4 id="2-Hexo-的主题美化"><a href="#2-Hexo-的主题美化" class="headerlink" title="2.Hexo 的主题美化"></a>2.Hexo 的主题美化</h4><p>1.到 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo主题官网</a> 下载主题放到 <strong>themes</strong> 文件夹</p>
+<p>2.配置根目录的 _config.yml 中：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: pure //选择下载主体文件的名字</span><br></pre></td></tr></table></figure>
+<p>3.hexo clean -&gt; hexo g -d 看效果</p>
+<p>4.具体主题美化看下载的主题文档</p>
+<h4 id="3-在Hexo博客上添加可爱的Live-2D模型"><a href="#3-在Hexo博客上添加可爱的Live-2D模型" class="headerlink" title="3.在Hexo博客上添加可爱的Live 2D模型"></a>3.在Hexo博客上添加可爱的Live 2D模型</h4><p>首先，安装npm包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<p>然后在hexo的根目录配置文件<code>_config.yml</code>中添加如下配置，详细配置可以参考<a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">文档</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-koharu</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
+<p>然后下载模型，模型名称可以到<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">这里</a>参考，一些模型的预览可以在<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">这里</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-koharu</span><br></pre></td></tr></table></figure>
+<p>下载完之后，在 Hexo 根目录中新建文件夹 live2d_models，然后在node_modules文件夹中找到刚刚下载的live2d模型，将其复制到 live2d_models 中，然后编辑<code>_config.ym</code>l配置文件中的model.use项，将其修改为live2d_models文件夹中的模型文件夹名称。</p>
+<p>一切就绪之后，用<code>hexo server</code>命令启动服务器，大功告成！</p>
+<h4 id="4-阿里云解析域名"><a href="#4-阿里云解析域名" class="headerlink" title="4.阿里云解析域名"></a>4.阿里云解析域名</h4><p>1.<a href="https://dns.console.aliyun.com/?spm=5176.100251.111252.14.7e144f15jRG8mz&amp;accounttraceid=9e23cc47-c762-4c2b-af1a-0eac8eaaed46#/dns/domainList" target="_blank" rel="noopener">阿里云</a>购买域名  解析 -&gt; 添加记录  -&gt; A 类型  -&gt; www -&gt; 默认 -&gt; ping  meijuna.github.io 地址的值 -&gt;ttl 10</p>
+<p>3.在根目录下的 source 文件夹 创建 CNAME 文件 ，内容为 <a href="http://www.meijuna.top" target="_blank" rel="noopener">www.meijuna.top</a> </p>
+<h4 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a>5.其他</h4><h5 id="1-hexo中添加图片的方法"><a href="#1-hexo中添加图片的方法" class="headerlink" title="1.hexo中添加图片的方法"></a>1.hexo中添加图片的方法</h5><p>1.下载插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save // hexo n &quot;文件&quot; 自动生成相同文件名的文件夹存放图片</span><br></pre></td></tr></table></figure>
+<p>2.设置站点配置_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<p>### </p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank"></a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'meijuna.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2022 MeiJuna的博客 京ICP备103982号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://meijuna.top ，围观MeiJuna的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn 🚀\n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","hOffset":56,"vOffset":-20,"bottom":"-20;","width":100,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

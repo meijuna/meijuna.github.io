@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="MeiJuna的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>npm 包管理工具</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">MeiJuna</a>
+  <a class="face-img" href="/">
+    <img src="https://avatars0.githubusercontent.com/u/28977046?s=400&amp;u=430ddb4a4bb56956162100daf3ef6f79a5b65bd2&amp;v=4">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    npm 包管理工具
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-06-18T11:17:05.214Z" itemprop="datePublished">2019-06-18</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-06-18T05:41:26.215Z" itemprop="dateUpdated">2019-06-18</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h1 id="npm-包管理工具"><a href="#npm-包管理工具" class="headerlink" title="npm 包管理工具"></a>npm 包管理工具</h1><h2 id="1-什么是-npm"><a href="#1-什么是-npm" class="headerlink" title="1. 什么是 npm ?"></a>1. 什么是 npm ?</h2><ul>
+<li>npm是 Node 的包管理工具 ，是全球最大的开源库生态系统</li>
+<li>官网 <a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a></li>
+</ul>
+<h2 id="2-常见命令"><a href="#2-常见命令" class="headerlink" title="2. 常见命令"></a>2. 常见命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">初始化项目</span><br><span class="line">    $ npm init</span><br><span class="line">    $ npm init --yes 默认配置</span><br><span class="line"> </span><br><span class="line">下载命令:</span><br><span class="line">    npm init						 初始化包管理文件</span><br><span class="line">    npm install 包名				  	下载</span><br><span class="line">    npm install 包名 -g 				下载到全局</span><br><span class="line">    npm install 包名 --save-dev--	    包管理文件生成开发依赖 devDependencies:&#123;xxx:xxx&#125;</span><br><span class="line">    npm install 包名 -d    			--save-dev--的简写</span><br><span class="line">    npm config ls					 查看npm的默认配置</span><br><span class="line">    </span><br><span class="line">    //开发环境使用 devDepencies</span><br><span class="line">    -D  === --save--dev  </span><br><span class="line">    // 生产环境使用  </span><br><span class="line">    -S  ==  --save</span><br><span class="line">   </span><br><span class="line">卸载命令:</span><br><span class="line">    npm uninstall 包名				卸载本地包</span><br><span class="line">    npm unpublish 包名@版本号		  卸载发布后的远程包 发布1小时内有效</span><br></pre></td></tr></table></figure>
+<h2 id="3-上传包"><a href="#3-上传包" class="headerlink" title="3. 上传包"></a>3. 上传包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">上传包:</span><br><span class="line">    1) 登入npm官方网站 www.npmjs.com</span><br><span class="line">    2) 注册 设置好邮箱</span><br><span class="line">    3) 在dos命令窗口登入npm adduser (注意密码输入不显示)</span><br><span class="line">    4) 发布包 npm publish</span><br><span class="line">    5) package.json中必备两个字段 name(包名) version(版本号)</span><br><span class="line">    ps:如果发布的包名与npm官网重复会导致发布失败</span><br></pre></td></tr></table></figure>
+<h2 id="2-设置淘宝镜像"><a href="#2-设置淘宝镜像" class="headerlink" title="2.  设置淘宝镜像"></a>2.  设置淘宝镜像</h2>  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//1. 安装 cnpm 设置淘宝镜像</span><br><span class="line">	npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">//2. 下载 nrm 用于切换源</span><br><span class="line">  cnpm install nrm -g </span><br><span class="line">  nrm ls 查看当前源</span><br><span class="line">  nrm use xx 切换源</span><br></pre></td></tr></table></figure>
+<h2 id="3-npm脚本"><a href="#3-npm脚本" class="headerlink" title="3. npm脚本"></a>3. npm脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm run build = node build.js </span><br><span class="line">为什么使用npm 脚本： 命令会记录在build</span><br><span class="line">1. 集中存放当前项目的所有脚本命令</span><br><span class="line">2. 外接口，用户不同项目的脚本命令，只要功能相同，就可以是同样的</span><br><span class="line">3. 提供很多辅助功能（多个脚本执行(&amp;|$$) 通配符 *.js </span><br><span class="line"></span><br><span class="line">以下npm 脚本可以简写</span><br><span class="line">    npm start </span><br><span class="line">    np stop</span><br><span class="line">    npm test</span><br><span class="line">    npm restart </span><br><span class="line">    </span><br><span class="line">默认提供脚本：</span><br><span class="line">1. &quot;start&quot;: &quot;node server.js&quot;</span><br><span class="line">2. &quot;install&quot;: &quot;node-gyp rebuild&quot;</span><br><span class="line">3. &quot;build&quot;: &quot;node build.js&quot;</span><br><span class="line"></span><br><span class="line">钩子： pre和pst两个钩子</span><br></pre></td></tr></table></figure>
+<h2 id="4-nvm-node版本管理"><a href="#4-nvm-node版本管理" class="headerlink" title="4.  nvm node版本管理"></a>4.  nvm node版本管理</h2><p>下载安装 nvm  <a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">nvm-setup.zip</a> </p>
+<ul>
+<li><p>nvm 命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nvm list #查看本地所有node版本</span><br><span class="line"></span><br><span class="line">nvm install 4.2.2 #安装 4.2.2 版本</span><br><span class="line"></span><br><span class="line">nvm use 4.2.2 #切换至 4.2.2 版本</span><br><span class="line"></span><br><span class="line">nvm uninstall 4.2.2 #卸载4.2.2 版本</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank"></a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'meijuna.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2022 MeiJuna的博客 京ICP备103982号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://meijuna.top ，围观MeiJuna的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn 🚀\n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","hOffset":56,"vOffset":-20,"bottom":"-20;","width":100,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

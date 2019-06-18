@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="MeiJuna的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>MongoDB</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">MeiJuna</a>
+  <a class="face-img" href="/">
+    <img src="https://avatars0.githubusercontent.com/u/28977046?s=400&amp;u=430ddb4a4bb56956162100daf3ef6f79a5b65bd2&amp;v=4">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    MongoDB
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-06-18T11:24:38.081Z" itemprop="datePublished">2019-06-18</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-06-18T05:41:16.818Z" itemprop="dateUpdated">2019-06-18</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><p>MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">show dbs      查看数据库</span><br><span class="line">use dbname    创建数据库 如果不存在创建数据库，否则切换到数据库</span><br><span class="line">show collections 显示数据库集合</span><br><span class="line"></span><br><span class="line">1.添加数据</span><br><span class="line"></span><br><span class="line">	db.web.save(&#123;&quot;name&quot;: &quot;meiejuna&quot;&#125;)  创建了名称为 web 的名称，名</span><br><span class="line">	db.web.insert(&#123;&quot;name&quot;: &quot;meijuna&quot;&#125;)  </span><br><span class="line">	插入相同的数据，sava 覆盖，insert 报错</span><br><span class="line">	</span><br><span class="line">2.删除数据</span><br><span class="line">      </span><br><span class="line">   db.students.remove( &#123;&#125; )  			    删除 students 集合下的所有数据</span><br><span class="line">   db.students.remove(&#123;&quot;name&quot;: &quot;meijuna&quot; &#125;) 删除 students 集合为 name 为 meijuna 的数据</span><br><span class="line">   db.students.drop() or db.runCommand(&#123;&quot;&quot;&#125;)删除 students 集合</span><br><span class="line">   db.runCommand( &#123; dropDaatabase: 1 &#125; )    删除当前数据库</span><br><span class="line">   </span><br><span class="line">3.修改数据</span><br><span class="line"></span><br><span class="line">db.students.updata(&#123;&quot;name&quot;: &quot;meijuna&quot;&#125;,set:&#123;&quot;sex&quot;:&quot;women&quot;&#125;)                单行修改</span><br><span class="line">db.students.updata(&#123;&quot;name&quot;: &quot;meijuna&quot;&#125;,&#123;$set:&#123;&quot;sex&quot;:&quot;women&quot;&#125;&#125;, true, true) 多行修改</span><br><span class="line">			     //&#123;查找条件&#125; , &#123; 修改内容 &#125;      匹配所有条件数据 修改所有匹配项</span><br><span class="line"></span><br><span class="line">4.查找数据</span><br><span class="line">  db.students.find()          查找 students 集合中的 所有    数据</span><br><span class="line">  db.students.findONe()       查找 students 集合中的 第一条  数据</span><br><span class="line">  db.students.find().pretty() 可视化查询 </span><br><span class="line">  </span><br><span class="line">5.排序 </span><br><span class="line">db.students.find().sort(&#123;&quot;age&quot;: 1&#125;) 1 升 -1 降序</span><br><span class="line"></span><br><span class="line">6.截取</span><br><span class="line">db.students.find().skip(2)  下标为 2 开始截取</span><br><span class="line">db.students.find().limit(2)   截取 2 条数据</span><br><span class="line"></span><br><span class="line">7.筛选显示</span><br><span class="line">db.students.find(&#123;age:20&#125;,&#123;_id:0,age:1,name:1&#125;)</span><br><span class="line">     					   0,筛选的结果不显示，1筛选结果显示</span><br></pre></td></tr></table></figure>
+<h2 id="SQL简介"><a href="#SQL简介" class="headerlink" title="SQL简介"></a>SQL简介</h2><ul>
+<li><p>关系型数据库 以行和列的形式存储数据，以便于用户理解。这一系列的行和列被称为表，一组表组成了数据库。表与表之间的数据记录有关系。</p>
+</li>
+<li><p><strong>关系型</strong>数据库有：<strong>mySql</strong> <strong>oracle</strong>   <strong>SqlServer</strong>  <strong>Access</strong>  <strong>db2 </strong> 等</p>
+</li>
+</ul>
+<h2 id="NoSQL简介"><a href="#NoSQL简介" class="headerlink" title="NoSQL简介"></a>NoSQL简介</h2><ul>
+<li>NoSQL，指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</li>
+<li>NoSQL用于超大规模数据的存储。（例如谷歌或Facebook每天为他们的用户收集万亿比特的数据）。这些类型的数据存储不需要固定的模式，无需多余操作就可以横向扩展。</li>
+<li><strong>非关系型</strong>数据库: <strong>MongoDB</strong>，<strong>Redis</strong>，<strong>HBase</strong>，<strong>CouchDB </strong> 等</li>
+</ul>
+<h2 id="非关系型数据库与关系型数据库区别"><a href="#非关系型数据库与关系型数据库区别" class="headerlink" title="非关系型数据库与关系型数据库区别"></a>非关系型数据库与关系型数据库区别</h2><h3 id="关系型数据库的优势："><a href="#关系型数据库的优势：" class="headerlink" title="关系型数据库的优势："></a>关系型数据库的优势：</h3><h4 id="1-复杂查询"><a href="#1-复杂查询" class="headerlink" title="1. 复杂查询"></a>1. 复杂查询</h4><ul>
+<li>可以用SQL语句方便的在多个表之间做非常复杂的数据查询。 </li>
+</ul>
+<h4 id="2-事务支持"><a href="#2-事务支持" class="headerlink" title="2. 事务支持"></a>2. 事务支持</h4><ul>
+<li>使得对于安全性能很高的数据访问要求得以实现。</li>
+</ul>
+<h3 id="非关系型数据库的优势："><a href="#非关系型数据库的优势：" class="headerlink" title="非关系型数据库的优势："></a>非关系型数据库的优势：</h3><h4 id="1-性能"><a href="#1-性能" class="headerlink" title="1. 性能"></a>1. 性能</h4><ul>
+<li>NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。</li>
+</ul>
+<h4 id="2-可扩展性"><a href="#2-可扩展性" class="headerlink" title="2. 可扩展性"></a>2. 可扩展性</h4><ul>
+<li>同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</li>
+</ul>
+<h2 id="MongoDB优点"><a href="#MongoDB优点" class="headerlink" title="MongoDB优点"></a>MongoDB优点</h2><p>它的特点是高性能、易部署、易使用，存储数据非常方便。</p>
+<p>主要功能特性有：</p>
+<ul>
+<li><p>面向集合存储，易存储对象类型的数据。</p>
+</li>
+<li><p>模式自由。</p>
+</li>
+<li><p>支持动态查询。</p>
+</li>
+<li><p>支持完全索引，包含内部对象。</p>
+</li>
+<li><p>支持查询。</p>
+</li>
+<li><p>支持复制和故障恢复。</p>
+</li>
+<li><p>使用高效的二进制数据存储，包括大型对象（如视频等）。</p>
+</li>
+<li><p>自动处理碎片，以支持云计算层次的扩展性</p>
+</li>
+<li><p>支持RUBY，PYTHON，JAVA，C++，PHP等多种语言。</p>
+</li>
+<li><p>文件存储格式为BSON（一种JSON的扩展）</p>
+</li>
+</ul>
+<p>#### </p>
+<h2 id="BSON-存储格式"><a href="#BSON-存储格式" class="headerlink" title="BSON 存储格式"></a>BSON 存储格式</h2><p>BSON是一种类似<a href="http://baike.baidu.com/view/136475.htm" target="_blank" rel="noopener">json</a>的二进制形式的存储格式，简称Binary JSON，它和JSON一样，支持内嵌的<strong>文档对象</strong>和<strong>数组对象</strong>，但是<strong>BSON</strong>有JSON没有的一些数据类型，**如Date和BinData类型。</p>
+<p>BSON有三个特点：<strong>轻量性</strong>、<strong>可遍历性</strong>、<strong>高效性</strong>。 </p>
+<p>非关系型数据库文件存储格式为 <strong>BSON</strong>（一种JSON的扩展）。</p>
+<h2 id="MongoDB下载与安装"><a href="#MongoDB下载与安装" class="headerlink" title="MongoDB下载与安装"></a>MongoDB下载与安装</h2><h3 id="1-MongoDB下载："><a href="#1-MongoDB下载：" class="headerlink" title="1. MongoDB下载："></a>1. MongoDB下载：</h3><p><a href="https://www.mongodb.com/download-center#community" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community</a>&gt;</p>
+<h3 id="2-设置环境变量"><a href="#2-设置环境变量" class="headerlink" title="2. 设置环境变量"></a>2. 设置环境变量</h3><p>在环境变量窗口中一般有两个变量，一个是你当前所使用的用户独有的环境变量，另一个是所有用户都可以访问的系统变量。其实如果在你的电脑上你只使用一个用户的话，那么不管你修改的用户的环境变量还是系统变量，效果都是一样的。为了以防未来会新建其他用户，那么我建议你修改系统变量而不是某个用户独有的环境变量。</p>
+<h3 id="3-测试连接"><a href="#3-测试连接" class="headerlink" title="3. 测试连接"></a>3. 测试连接</h3><ul>
+<li>管理员身份运行 cmd 输入 <code>mongo</code></li>
+<li>启动 mongdb 服务 <code>net start mongdb</code></li>
+<li>关闭 mongdb 服务 <code>net stop MongoDB</code></li>
+</ul>
+<h3 id="4-安装可视化工具-Robo-3T"><a href="#4-安装可视化工具-Robo-3T" class="headerlink" title="4. 安装可视化工具(Robo 3T)"></a>4. 安装可视化工具(Robo 3T)</h3><p><a href="https://robomongo.org/download" target="_blank" rel="noopener">https://robomongo.org/download</a></p>
+<p>node 使用 MongoDB</p>
+<p>连接 MongoDB</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 下载 mongoose </span></span><br><span class="line">cnpm i mongoose -D </span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 引入 mongoose </span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>( <span class="string">'mongoose'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 连接 mongoose </span></span><br><span class="line"><span class="comment">// 连接本地mongodb ，本机的ip 127.0.0.1，端口：27017 数据库：student</span></span><br><span class="line">mongoose.connect(<span class="string">"mongodb://127.0.0.1:27017/student"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(!err)&#123; </span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"connected to Mongodb"</span>); <span class="comment">//连接成功</span></span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">     <span class="keyword">throw</span> err;<span class="comment">//如果连接失败，则抛出异常</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>存储数据</p>
+<p>Schema不仅<strong>定义了文档结构和使用性能</strong>，还可以有扩展插件、实例方法、静态方法、复合索引、文档生命周期钩子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Schema  ：   一种以文件形式存储的数据库模型骨架，不具备数据库的操作能力</span><br><span class="line"></span><br><span class="line">Model   ：   由Schema发布生成的模型，具有抽象属性和行为的数据库操作对</span><br><span class="line"></span><br><span class="line">Entity  ：   由Model创建的实体，他的操作也会影响数据库</span><br></pre></td></tr></table></figure>
+<p>存储数据步骤：定义Schema (骨架) &gt; 创建model（模型）&gt;  Entity实例化方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>( <span class="string">'mongoose'</span>);</span><br><span class="line"><span class="keyword">const</span> Schema = mongoose.Schema;</span><br><span class="line"></span><br><span class="line">mongoose.connect( <span class="string">'mongodb://127.0.0.1:27017/meijuna'</span>,(error) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> ( error ) &#123;</span><br><span class="line">    <span class="keyword">throw</span> error</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">'database is connected~'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userSchema = <span class="keyword">new</span> Schema(&#123;  <span class="comment">//定义数据模型</span></span><br><span class="line">  username: <span class="built_in">String</span>,</span><br><span class="line">  password: <span class="built_in">String</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过模式studentSchema  创建一个模型studentModel </span></span><br><span class="line"><span class="keyword">var</span> studentModel = mongoose.model(<span class="string">"students"</span>,studentSchema );</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> studentModel (); </span><br><span class="line">instance1.name=<span class="string">"tangyan"</span>;</span><br><span class="line">instance1.age=<span class="string">"18"</span>;</span><br><span class="line"></span><br><span class="line">instance1.save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;   <span class="comment">//通过save方法保存</span></span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">'保存失败'</span>);  </span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
+<p>查询数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 查</span><br><span class="line">userModel.find(&#123;&#125;, ( error, result ) =&gt; &#123;</span><br><span class="line"> 	if ( error ) throw error </span><br><span class="line">	console.log ( result )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>修改数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">userModel.find(&#123; <span class="attr">username</span>: <span class="string">'aaa'</span>&#125;, ( error, result) =&gt;&#123;</span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> _id = result[<span class="number">0</span>]._id</span><br><span class="line"></span><br><span class="line">  userModel.findById(_id, ( error, doc ) =&gt; &#123;    <span class="comment">// 修改</span></span><br><span class="line">    <span class="keyword">if</span> (error ) <span class="keyword">throw</span> error</span><br><span class="line">    <span class="built_in">console</span>.log( doc );</span><br><span class="line">    doc.username = <span class="string">"meijuna"</span>;</span><br><span class="line">    doc.save ( <span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> error</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"数据修改成功"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>删除数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">userModel.find(&#123; <span class="attr">username</span>: <span class="string">'aaa'</span>&#125;, ( error, result) =&gt;&#123;</span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error</span><br><span class="line">  <span class="keyword">const</span> _id = result[<span class="number">0</span>]._id</span><br><span class="line"></span><br><span class="line">  userModel.findById(_id, ( error, doc ) =&gt; &#123;    <span class="comment">// 删除</span></span><br><span class="line">    <span class="keyword">if</span> (error ) <span class="keyword">throw</span> error</span><br><span class="line"></span><br><span class="line">    doc.remove( <span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (error) <span class="keyword">throw</span> error</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'数据删除成功！'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>注册</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="keyword">const</span> Schema = mongoose.Schema;</span><br><span class="line"></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://127.0.0.1:27017/meijuna'</span>, (error) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="keyword">throw</span> error</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'database is connected !!!'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> userSchema = <span class="keyword">new</span> Schema(&#123; <span class="comment">//定义数据模型</span></span><br><span class="line">  username: <span class="built_in">String</span>,</span><br><span class="line">  password: <span class="built_in">String</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> userModel = mongoose.model(<span class="string">'users'</span>, userSchema) <span class="comment">//模型创建</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="keyword">new</span> userModel(); <span class="comment">//创建实体</span></span><br><span class="line"></span><br><span class="line">router.get(<span class="string">'/'</span>, (req, res, next) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username,  password &#125; = req.query;</span><br><span class="line">  <span class="built_in">console</span>.log(username,password);</span><br><span class="line">   userModel.find(&#123;&#125;, (error, result) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> flag = result.some(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> item.username === username</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">if</span> (flag) &#123; <span class="comment">//用户名存在</span></span><br><span class="line">      res.render(<span class="string">'register'</span>, &#123;</span><br><span class="line">        data: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">          ret: <span class="literal">true</span>, <span class="comment">//身份验证 权限验证</span></span><br><span class="line">          status: <span class="number">2</span> <span class="comment">//0 表示失败 1：成功  2：</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      user.username = username;</span><br><span class="line">      user.password = password;</span><br><span class="line">      user.save();</span><br><span class="line"></span><br><span class="line">      res.render(<span class="string">'register'</span>, &#123;</span><br><span class="line">        data: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">          ret : <span class="literal">true</span>,</span><br><span class="line">          status: <span class="number">1</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank"></a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'meijuna.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2022 MeiJuna的博客 京ICP备103982号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://meijuna.top ，围观MeiJuna的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn 🚀\n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","hOffset":56,"vOffset":-20,"bottom":"-20;","width":100,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
