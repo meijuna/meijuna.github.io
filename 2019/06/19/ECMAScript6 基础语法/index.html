@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="MeiJuna的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>ECMAScript6 基础语法</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">MeiJuna</a>
+  <a class="face-img" href="/">
+    <img src="https://avatars0.githubusercontent.com/u/28977046?s=400&amp;u=430ddb4a4bb56956162100daf3ef6f79a5b65bd2&amp;v=4">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    ECMAScript6 基础语法
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-06-19T11:26:15.000Z" itemprop="datePublished">2019-06-19</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-06-21T13:22:36.760Z" itemprop="dateUpdated">2019-06-21</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <ol>
+<li><p>let 声明的变量只有在代码块内有效，在代码块外面调用会出错</p>
+<p>相同的作用域内 不允许重复声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function()&#123;   //报错</span><br><span class="line">	let a = &quot;1&quot; </span><br><span class="line">	var a = &quot;2&quot;</span><br><span class="line">&#125;</span><br><span class="line">function func(age) &#123; //报错 不能再函数内部重新声明参数</span><br><span class="line">	let arg</span><br><span class="line">&#125;</span><br><span class="line">function func(age) &#123; //不报错 </span><br><span class="line">    &#123;</span><br><span class="line">       let arg    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>let 定义的变量，不会发生变量提升( 在声明前使用，值为 undenfined )</p>
+</li>
+</ol>
+<p>暂时性死区：</p>
+<p>只要在块级作用域 let 和 const 命令，它所声明的变量就会绑定这个区域，不在受外部的影响。</p>
+<p>这个区块对这些命令声明的变量从一开始就形成了封闭作用域。只要在声明之间就是用这些变量，就会报错。</p>
+<p>2.2 块级作用域</p>
+<p>2.2.1 为什么需要块级作用域？</p>
+<p>因为 es5 只用全局作用域和块级作用域，倒是很多场景不合理</p>
+<ol>
+<li><p>内层变量可能覆盖外层变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var temp = new Date();</span><br><span class="line">function fn() &#123;</span><br><span class="line"> console.log(temp);</span><br><span class="line">     if (false) &#123;</span><br><span class="line">        var temp = &apos;hello&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn() //undefined 应为内部变量temp的提升导致覆盖外层 temp 变量</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>用来计数的循环边聊泄露为全局变量</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"hello"</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(s[i]); <span class="comment">//h e l l o</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">//5  i 只是来控制循环就，当是循环结束后，它并没有消失，而是变成了 全局变量</span></span><br></pre></td></tr></table></figure>
+<p>let 为Javascript 新增了块级作用域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn() &#123;</span><br><span class="line">	let = 5;</span><br><span class="line">	if (true) &#123;</span><br><span class="line">		let n = 10;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(n); //5 外层代码块不受内层代码块的影响</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>块级作用域的出现，使得应用广泛应用的立即执行匿名不在必要了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（function()&#123;</span><br><span class="line">    var temp = &quot;&quot;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	let temp = &quot;&quot; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>const 声明一个常量 ，一旦声明，常量的值就不能改变</p>
+<p>和 let 命令一样，只在声明所在的块级作用域内有效，声明的变量不会提升，同样存在暂死区，只能在声明后使用。</p>
+<p>不可重复声明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const PI = 3.1415</span><br><span class="line">PI = 3.14</span><br></pre></td></tr></table></figure>
+<p>这就意味着 const 声明的常量在声明的时候，就必须初始化，不能留到以后赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const PI;</span><br><span class="line">//SyntaxError</span><br></pre></td></tr></table></figure>
+<p>const 的本质</p>
+<blockquote>
+<p>const 实质上保证的并不是变量的值不改变，而是变量指向的那个内存不会改变。对于基本数据类型，值保存在变量只要的内存地址中，因此等于常量。但是对于引用类型来说，变量指向的内存地址保存的是一个指针。const 只能保证这个指针是固定，它指向的数据结构是不是可变的，这个是不能控制的，因此，将一个对象声明为常量必须非常小心。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">obj.prop = <span class="number">123</span>;</span><br><span class="line">obj.prop <span class="comment">//123</span></span><br><span class="line">obj = &#123;&#125;  <span class="comment">// error 给变量 obj 赋值一个新的对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = [] ;</span><br><span class="line">a.push(<span class="string">'hello'</span>) <span class="comment">//可执行</span></span><br><span class="line">a.legth = <span class="number">0</span> <span class="comment">//可执行</span></span><br><span class="line">a = [<span class="string">'Dave'</span>] <span class="comment">//error</span></span><br><span class="line">常量 a 是一个数组，这个数组本身是可写的，当是如果将另一个数组赋值给 a， 就会报错</span><br></pre></td></tr></table></figure>
+<p>2.3.3 es6 声明变量的 6 中方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">声明变量方法:</span><br><span class="line">es5 ：var function</span><br><span class="line">es6 : let const import class  </span><br><span class="line">所以共 6 种</span><br></pre></td></tr></table></figure>
+<p>2.4 顶层对象的属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">全局对象在浏览器环境： window 对象</span><br><span class="line">全局对象在 node 环境中： global 对象</span><br><span class="line"></span><br><span class="line">全局对象的属性和全局变量相关</span><br><span class="line"></span><br><span class="line">window.a = 1;</span><br><span class="line">console.log( a ) // 1</span><br><span class="line"></span><br><span class="line">a = 2 ;</span><br><span class="line">console.log( window.a ) //2</span><br></pre></td></tr></table></figure>
+<p>全局对象的属性和全局变量相关，被认为是 javascript 语言中最大的败笔之一。</p>
+<p>回带来以下一个很大的问题：</p>
+<ol>
+<li><p>无法在编译时就提示变量声明错误的提示，只有在运行时才知道。</p>
+<ul>
+<li><p>源代码需要被编译成机器可以识别的程序，这个编译过程被称为编译时。</p>
+</li>
+<li><p>用户可以运行编译过的程序，程序运行的过程被称为运行时。</p>
+</li>
+</ul>
+</li>
+<li><p>不知不觉就会创建全局变量</p>
+</li>
+<li><p>全局的属性导出都是可读写的，不利于模块化编程</p>
+</li>
+</ol>
+<p>es 6 为了改变这点，保持了兼容性，var 和 function  命令的全局依旧是顶层对象的属性；let 和 const 命令、class命令声明的全局变量不属于顶层函数的属性，也就是说 ES6开始，全局变量逐步与顶层对象的属性隔离。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let b =1;</span><br><span class="line">window.b //undefined</span><br></pre></td></tr></table></figure>
+<p>第3章 变量的解构赋值</p>
+<p>es 6 允许按照一定模式从数据和对象中提取值，然后对变量进行赋值，这被称为解构赋值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只要左边的变量就会被赋予对应的值</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c ] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [foo, [ [bar], baz ] ] = [ <span class="number">1</span>, [<span class="number">2</span>], <span class="number">3</span>] ]</span><br><span class="line"><span class="comment">//   1        2      3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [, , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>]	</span><br><span class="line">		<span class="comment">// baz</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//如果解构解构不成功，变量的值就等于 undefined </span></span><br><span class="line"><span class="keyword">let</span> [foo] = [];</span><br><span class="line"><span class="keyword">let</span> [bar, foo] = [<span class="number">1</span>];</span><br><span class="line"><span class="comment">//以上都解构都不成功，foot值都为 undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//不完全解构 ：左边的模式只匹配了一部分的等号右边的数组</span></span><br><span class="line"><span class="keyword">let</span> [x,y] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">   <span class="comment">//1  2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>]</span><br><span class="line">	<span class="number">1</span>   <span class="number">2</span>    <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>默认值:</p>
+<p>解构赋值允许指定默认值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [x, y = 1 ]  = [ &apos;a&apos; ] // x = a , y =1</span><br></pre></td></tr></table></figure>
+<p>对象的解构赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let &#123; foo, bar &#125; = &#123; foo: &quot; aaa &quot;, bar: &quot; bbb &quot;&#125;;</span><br><span class="line">	//aaa  bbb</span><br><span class="line">对象的解构与数组的解构有一个重要的不同，数组的元素按次序排列的，变量的取值由它的位置确定的，而对象的属性没有次序，变量必须与属性同名才能取到正确的值</span><br><span class="line"></span><br><span class="line">let &#123; baz &#125; = &#123; foo: &quot;aaa&quot; ,bar : &quot; bbb &quot;&#125;</span><br><span class="line">	 undefined</span><br><span class="line">	 kn</span><br></pre></td></tr></table></figure>
+<p>如果等号右边的值不是对象或数组，就先将其转换为对象。由于undefinedd 和null 无法转换对象，所以进行结构赋值时会出错。</p>
+<p>用途</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let x = 1;</span><br><span class="line">let y = 2;</span><br><span class="line">[x, y ] = [y, x] //交换变量的 x  y值</span><br><span class="line"></span><br><span class="line">从函数返回多个值</span><br><span class="line">由于函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了结构赋值，取出这些值就很方便</span><br><span class="line">function fn () &#123;</span><br><span class="line">	return [1, 2,3]</span><br><span class="line">&#125;</span><br><span class="line">let [a, b, c] = fn()</span><br><span class="line"></span><br><span class="line">function obj () &#123;</span><br><span class="line">	return &#123;</span><br><span class="line">	  a: 1,</span><br><span class="line">	  b: 2,</span><br><span class="line">	  c: 3</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">let [a, b, c] = obj ()</span><br></pre></td></tr></table></figure>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank"></a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'meijuna.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2022 MeiJuna的博客 京ICP备103982号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://meijuna.top ，围观MeiJuna的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn 🚀\n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","hOffset":56,"vOffset":-20,"bottom":"-20;","width":100,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
