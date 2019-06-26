@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>开发工具</title>
+	<title>vue 的生命周期</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -49,7 +49,7 @@
     
   
   <h1 class="title">
-    开发工具
+    vue 的生命周期
   </h1>
   
 
@@ -57,11 +57,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-06-18T11:17:05.236Z" itemprop="datePublished">2019-06-18</time>
+        <time datetime="2019-06-26T11:10:13.000Z" itemprop="datePublished">2019-06-26</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-06-26T13:57:50.312Z" itemprop="dateUpdated">2019-06-26</time>
+    更新 <time datetime="2019-06-26T14:01:45.978Z" itemprop="dateUpdated">2019-06-26</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -73,9 +73,45 @@
     <div class="article">
       <div class="content">
         
-        <h3 id="VsCode"><a href="#VsCode" class="headerlink" title="VsCode"></a>VsCode</h3><h2 id="subline-Text3"><a href="#subline-Text3" class="headerlink" title="subline Text3"></a>subline Text3</h2><h3 id="1-插件下载安装方法"><a href="#1-插件下载安装方法" class="headerlink" title="1.插件下载安装方法"></a>1.插件下载安装方法</h3><p>快捷键<code>ctrl + shift + p</code>, 打开sublime命令工具，输入 <code>Install Package</code></p>
-<h3 id="2-插件"><a href="#2-插件" class="headerlink" title="2.插件"></a>2.插件</h3><h5 id="1-格式化代码：html-css-js-Prettify"><a href="#1-格式化代码：html-css-js-Prettify" class="headerlink" title="1.格式化代码：html/css/js Prettify"></a>1.格式化代码：html/css/js Prettify</h5><p> 格式化代码快捷键   <code>Ctrl + Shift + H</code></p>
-<h5 id="2-vue语法高亮：-vue-syntax-highlight"><a href="#2-vue语法高亮：-vue-syntax-highlight" class="headerlink" title="2.vue语法高亮： vue-syntax-highlight"></a>2.vue语法高亮： <strong>vue-syntax-highlight</strong></h5>
+        <h1 id="Vue-的生命周期"><a href="#Vue-的生命周期" class="headerlink" title="Vue 的生命周期"></a>Vue 的生命周期</h1><h2 id="1-什么是生命周期？"><a href="#1-什么是生命周期？" class="headerlink" title="1.  什么是生命周期？"></a>1.  什么是生命周期？</h2><p>​    生命周期是组件从创建到销毁的一个过程，这个过程中，我们在每个特定的阶段会触发一些方法，这些方法叫声明钩子 or 组件钩子</p>
+<h2 id="2-为什么学习生命周期？"><a href="#2-为什么学习生命周期？" class="headerlink" title="2.  为什么学习生命周期？"></a>2.  为什么学习生命周期？</h2><p>​    因为我们想在生命周期钩子中实现项目功能，那么必须知道每一个生命周期钩子的具体通途</p>
+<h2 id="3-这个声明周期是谁的声明周期？"><a href="#3-这个声明周期是谁的声明周期？" class="headerlink" title="3.  这个声明周期是谁的声明周期？"></a>3.  这个声明周期是谁的声明周期？</h2><p>​    生命周期指的是组件的生命周期</p>
+<h2 id="4-vue-生命周期-分为-三个-阶段"><a href="#4-vue-生命周期-分为-三个-阶段" class="headerlink" title="4. vue 生命周期 分为 三个 阶段"></a>4. vue 生命周期 分为 三个 阶段</h2><p>​    Vue 生命周期分为 <strong>初始化</strong>， <strong>运行中</strong>  <strong>销毁</strong>   <strong>三个阶段   8个钩子函数</strong></p>
+<p><img src="/2019/06/26/vue生命周期/vue-生命周期/lifecycle.png" alt=""></p>
+<h3 id="1-始化化阶段："><a href="#1-始化化阶段：" class="headerlink" title="1.始化化阶段："></a>1.始化化阶段：</h3><h4 id="1-beforeCreate"><a href="#1-beforeCreate" class="headerlink" title="1. beforeCreate"></a>1. beforeCreate</h4><p>​    组件创建前触发，目的是为了组件的生命周期 和 组件中的事件 做准备。</p>
+<p>​     数据没有获得，真实 dom 也没有渲染出来的</p>
+<p>​    可以做数据请求，提供一次数据修改的机会</p>
+<h4 id="2-created"><a href="#2-created" class="headerlink" title="2. created"></a>2. created</h4><p>​    组件创建结束</p>
+<p>​    数据得到了，真实 dom 没有渲染出来</p>
+<p>​    可以做数据请求，提供一次数据修改的机会</p>
+<h4 id="3-beforeMount"><a href="#3-beforeMount" class="headerlink" title="3.  beforeMount"></a>3.  beforeMount</h4><p>​    组件挂载前， （挂载：把VDOM渲染到页面）</p>
+<p>​    任务： 判断 el 判断 template</p>
+<p>​         如果 el 没有，我们需要手动挂载，如果有判断 template, 如果存在，进行 render 函数（jsx =》 虚拟DOM）,</p>
+<p>如果没有 template， 通过 outHTML 手动书写模板。</p>
+<h4 id="4-mounted"><a href="#4-mounted" class="headerlink" title="4. mounted"></a>4. mounted</h4><p>​    1. 组件挂载结束</p>
+<p>​    2. 数据有了，VDOM 渲染出了真实DOM </p>
+<p>​    3.可以数据请求，修改数据 </p>
+<p>​    4.执行了一次</p>
+<p>​    可以进行真实dom的操作了 （可以进行第三方库的实例化啊了）</p>
+<p>初始化阶段总结：</p>
+<ol>
+<li>数据请求一般写在 created 里面, 因为这时候刚好能得到数据</li>
+<li>第三方实例化 一般写在 mounted 中，因为 mounted 能够获得真实 DOM</li>
+</ol>
+<h3 id="2-运行中阶段"><a href="#2-运行中阶段" class="headerlink" title="2.  运行中阶段"></a>2.  运行中阶段</h3><p>​    触发条件：数据发生改变才触发</p>
+<h4 id="1-beforeUpdata"><a href="#1-beforeUpdata" class="headerlink" title="1. beforeUpdata"></a>1. beforeUpdata</h4><ol>
+<li><p>更新前</p>
+<p>任务：重新渲染 VDOM, 然后通过 dif 算法比较两次VDOM, 生成 path 补丁对象</p>
+</li>
+<li><p>可以触发多次 </p>
+</li>
+</ol>
+<h4 id="2-update"><a href="#2-update" class="headerlink" title="2. update"></a>2. update</h4><ol>
+<li>更新结束</li>
+<li>更新后的数据和真实的DOM得到了</li>
+<li>一般进行动态数据获取 （第三方库实例化）</li>
+</ol>
+<h3 id="3-销毁阶段"><a href="#3-销毁阶段" class="headerlink" title="3. 销毁阶段"></a>3. 销毁阶段</h3>
       </div>
         <div class="support-author">
           <p>感谢您的阅读。 🙏

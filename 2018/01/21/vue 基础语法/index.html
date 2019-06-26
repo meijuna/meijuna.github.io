@@ -61,7 +61,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2019-06-21T13:42:54.857Z" itemprop="dateUpdated">2019-06-21</time>
+    更新 <time datetime="2019-06-25T09:49:56.127Z" itemprop="dateUpdated">2019-06-25</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -73,7 +73,36 @@
     <div class="article">
       <div class="content">
         
-        <p>ECMAScript6 基础语法</p>
+        <p>watch 侦听属性</p>
+<ol>
+<li>作用</li>
+</ol>
+<ul>
+<li>用来监听data中定义的数据，当data中定义的数据发生了变化，那么watch中的key就会触发</li>
+</ul>
+<p>使用方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//方法</span><br><span class="line">watch: &#123;</span><br><span class="line">  fn () &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">//对象 （深度监听）</span><br></pre></td></tr></table></figure>
+<h2 id="mixins-（-青铜-）"><a href="#mixins-（-青铜-）" class="headerlink" title="mixins （ 青铜 ）"></a>mixins （ 青铜 ）</h2><p>实际意义：将组件的选项抽离出去，单独管理，复用</p>
+<ul>
+<li>有两种使用形式<ul>
+<li>局部混入</li>
+<li>全局混入</li>
+</ul>
+</li>
+</ul>
+<h2 id="原理（-王者-）"><a href="#原理（-王者-）" class="headerlink" title="原理（ 王者 ）"></a>原理（ 王者 ）</h2><ol>
+<li>数据驱动<br>当数据发生改变时，视图也会进行更新，这叫做数据驱动，也就是数据驱动视图 </li>
+<li>深入响应式原理<br>数据模型仅仅是普通的 JavaScript 对象。而当你修改它们时，视图会进行更新</li>
+<li>双向数据绑定原理<br>当我们使用 v-model 指令绑定了表单元素时，那么我们可以在视图直接获得数据，当视图发生改变时，数据也会进行更新</li>
+</ol>
+<p>综上： 三者都是应用了同一个底层原理，这个底层原理由es5的 Object.defineProperty 属性来提供</p>
+<ul>
+<li>vue中底层原理的实现主要是依赖 存储器（ getter/setter ）</li>
+<li>我们利用了数据劫持和事件的发布订阅来实现双向数据绑定，当我们在vue data选项中定义数据时，vue会通过观察者对象（ observer ）将data选项中的所有key，经过Object.defineProperty 的getter 和setter进行设置，当我们通过 v-model指令绑定元素是， 自动触发getter,getter会返回一个初始值，这样我们在视图中就可以看到数据了，当视图中内容改变时，会触发setter,setter会通知vue，视图已经进行了更新，vue会重新生成 虚拟DOM , 继而通过 新旧 虚拟DOM 对比， 生成patch对象，再将patch对应渲染到视图中</li>
+</ul>
+<p>Vue双向数据绑定原理或事件驱动原理是通过数据劫持跟事件的发布订阅来执行的，数据劫持是vue通过 观察者对象将 data 选项中的 key 和 value 值 需要使用es5的属性 object.getOwnPropertyDescriptor() 里的 getter 和 setter 做设置。</p>
+<p>Vue.set/this.$set 的原理（ 数组的下标和length不响应 ）</p>
+<p>底层：Object.assign</p>
 
       </div>
         <div class="support-author">
