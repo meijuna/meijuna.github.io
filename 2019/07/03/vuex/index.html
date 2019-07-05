@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>localStroage和 sessionStorage以及 cookie的区别</title>
+	<title>vuex</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -49,7 +49,7 @@
     
   
   <h1 class="title">
-    localStroage和 sessionStorage以及 cookie的区别
+    vuex
   </h1>
   
 
@@ -57,11 +57,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-06-23T04:29:51.000Z" itemprop="datePublished">2019-06-23</time>
+        <time datetime="2019-07-03T01:30:05.000Z" itemprop="datePublished">2019-07-03</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-07-03T00:35:49.712Z" itemprop="dateUpdated">2019-07-03</time>
+    更新 <time datetime="2019-07-04T12:35:33.237Z" itemprop="dateUpdated">2019-07-04</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -73,26 +73,63 @@
     <div class="article">
       <div class="content">
         
-        <h2 id="1-localStroage-和-sessionStorage-以及-cookie-的区别。"><a href="#1-localStroage-和-sessionStorage-以及-cookie-的区别。" class="headerlink" title="1. localStroage 和 sessionStorage 以及 cookie 的区别。"></a>1. localStroage 和 sessionStorage 以及 cookie 的区别。</h2><p>   首先总的来说，三者都是用于持久化数据存储的手段，都是存储在浏览器端，且同源（协议，端口号，都域名相同）</p>
-<p>​     localStorage 和s essionStorage 都是Web存储，大小5M左右，完全存储在客户端，它们是因为本地存储数据而存在的</p>
-<p>​     cookies也是存储在浏览器端的，大小不超过4k，作为http规范的一部分，它是通过浏览器的请求将数据传给服务器的。</p>
-<p>   localStorage属于永久性存储，而 sessionStorage 属于当会话结束的时候，存储的值会被清空，而cookie是通过设置过期时间来存储的。</p>
-<h2 id="2-什么是localStorage-本地存储"><a href="#2-什么是localStorage-本地存储" class="headerlink" title="2. 什么是localStorage(本地存储)"></a>2. 什么是localStorage(本地存储)</h2><p>在HTML5中，新加入了一个 localStorage 特性，这个特性主要是用来作为本地存储来使用的，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中  localStorage 会有所不同。</p>
-<h3 id="2-1-localStorage的特点"><a href="#2-1-localStorage的特点" class="headerlink" title="2.1 localStorage的特点"></a>2.1 localStorage的<strong>特点</strong></h3><ul>
-<li><p>localStorage拓展了cookie的 4K 限制。</p>
-</li>
-<li><p>localStorage会将第一次请求的数据直接存储到本地，这个相当于一个5M大       小的针对于前端页面的数据库，但只有在高版本的浏览器中才支持的。</p>
-</li>
-<li><p>目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换。</p>
-</li>
-<li><p>localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡。</p>
-</li>
-</ul>
-<ol start="2">
-<li><h3 id="2-localStroage读写及删除操作。"><a href="#2-localStroage读写及删除操作。" class="headerlink" title="2 localStroage读写及删除操作。"></a>2 localStroage读写及删除操作。</h3></li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//localStorage的写入有三种方法</span></span><br><span class="line"><span class="built_in">window</span>.localStorage.key=value</span><br><span class="line"><span class="built_in">window</span>.localStorage[key]=value</span><br><span class="line"><span class="built_in">window</span>.localStorage.setItem(key,value) <span class="comment">//推荐</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取 localStorage</span></span><br><span class="line">   <span class="built_in">window</span>.localStorage.key</span><br><span class="line">   <span class="built_in">window</span>.localStorage[key]</span><br><span class="line">   <span class="built_in">window</span>.localStorage.getItem(key) <span class="comment">//推荐</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// localStorage的删除</span></span><br><span class="line"><span class="comment">//将localStorage中的某个键值对删除</span></span><br><span class="line"><span class="built_in">window</span>.localStorage.removeItem(<span class="string">"a"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//将localStorage的所有内容清除</span></span><br><span class="line"><span class="built_in">window</span>.localStorage.clear();</span><br></pre></td></tr></table></figure>
+        <p>vux 的组成部分</p>
+<p>vuex的核心组成部分： state、Actions、Mutaions</p>
+<p>后端数据请求写在Actions 里</p>
+<p>数据流向？ </p>
 <p>​    </p>
+<p>核心组成部分？</p>
+<p>Actions Muta</p>
+<p>store</p>
+<p>​    index.js</p>
+<ol>
+<li><p>引入依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line"></span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line">import state from &apos;./state&apos;</span><br><span class="line">import actions from &apos;./actions&apos;</span><br><span class="line">import mutations from &apos;./mutations&apos;</span><br><span class="line">import getters from &apos;./getters&apos;</span><br><span class="line">Vue.use( Vuex )</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">	state, //state 就是状态（数据）</span><br><span class="line">	actions,  // 用户交互发出的东子</span><br><span class="line">	mutations, // 修改数据</span><br><span class="line">	getters  //获取数据</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export defalut store</span><br></pre></td></tr></table></figure>
+<p>state.js</p>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const state = &#123;</span><br><span class="line">    count:0</span><br><span class="line">&#125;</span><br><span class="line">export default state</span><br></pre></td></tr></table></figure>
+
+
+actions.js   //是一个对象，是用来存储用户交互的方法，并且发送动作给 mutations
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import * as type from &apos;./type&apos;</span><br><span class="line">const ations =&#123;</span><br><span class="line">	//都是方法</span><br><span class="line">  add( store对象，组件传来的数据) &#123;</span><br><span class="line">	 //1 创建动作</span><br><span class="line">	 const action = &#123;</span><br><span class="line">		type: type.INCREMENT,</span><br><span class="line">		payload: food //视图传来的数据陈 负载</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	//2. 发送动作个 mutations</span><br><span class="line">	</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+3. type.js 
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export const INCREMENT = &quot;INCREME&quot;</span><br></pre></td></tr></table></figure>
+
+
+4. mutations.js //是一个对象，存储的方法是用来修改数据的
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import * as type from &apos;./type&apos;</span><br><span class="line">const mutations = &#123;</span><br><span class="line">   [ type.INCREMENT ] (state, actions ) &#123;  // 数据， 动作</span><br><span class="line">		state.count ++</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">export default mutations</span><br></pre></td></tr></table></figure>
+
+
+5.  getters.js    // 是一个对象，1. 存储的是方法，必须有方绘制
+
+6. <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const getters =&#123;</span><br><span class="line">	getCount (state)  // 数据</span><br><span class="line">	return state.count</span><br><span class="line">&#125;</span><br><span class="line">exppo</span><br></pre></td></tr></table></figure>
+</code></pre><p>this.$store.dispatch(‘add’)</p>
+<p>辅助工具：</p>
+<ol>
+<li><p>mapActions  mapMutations map Getters </p>
+<p>好处：</p>
+<ol>
+<li>当用户交互过多时，重复代码过多</li>
+<li>分担视图中的部分逻辑，减轻视图的负担</li>
+</ol>
+</li>
+<li><p>是使用…结构的好处</p>
+<ol>
+<li>按需</li>
+<li>可以据需在当前组件内自定义事件处理程序</li>
+</ol>
+</li>
+</ol>
+<p>module  </p>
+<p>​    可以将数据分块管理，方便将来维护</p>
+<p>vue 通过交 module 模块</p>
+<p>vue 项目中 store 下的一个目录就是一个数据包</p>
 
       </div>
         <div class="support-author">

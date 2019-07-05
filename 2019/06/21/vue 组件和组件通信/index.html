@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="MeiJuna的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="../source/img/favicon.ico" /> -->
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>知识点</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">MeiJuna</a>
+  <a class="face-img" href="/">
+    <img src="https://avatars0.githubusercontent.com/u/28977046?s=400&amp;u=430ddb4a4bb56956162100daf3ef6f79a5b65bd2&amp;v=4">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    知识点
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-06-21T13:40:26.000Z" itemprop="datePublished">2019-06-21</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-06-27T00:22:14.176Z" itemprop="dateUpdated">2019-06-27</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <h2 id="vu-两大特性："><a href="#vu-两大特性：" class="headerlink" title="vu 两大特性："></a>vu 两大特性：</h2><p>1 . 指令 – 用来操作 dom</p>
+<p>2 . 组件 – 组件是 html css js的聚合体</p>
+<p>为什么要使用组件？</p>
+<ol>
+<li>组件可以在项目中进行复用</li>
+<li>加快项目进度</li>
+<li>将一个具备完整功能的项目的一部分进行多处使用</li>
+</ol>
+<p>要想使用组件化，那么这个组件是完整的</p>
+<p>组件中的根元素必须是唯一</p>
+<p>组件要先注册，再实例化，要在实例范围内执行</p>
+<p>vue 借鉴 react ,组件以标签的形式呈现的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//组件使用前必须先注册</span><br><span class="line">Vue.component(组件名称，组件配置)</span><br><span class="line">var Hello = Vue.extend(&#123;&#125;)</span><br><span class="line">Vue.compoent(&apos;Father&apos;, Hello)</span><br><span class="line"></span><br><span class="line">可以简化</span><br><span class="line">Vue.componet(&apos;Father&apos;, &#123;</span><br><span class="line">	template</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>组件的创建</p>
+<ol>
+<li><p>全局注册</p>
+<p>所有实例都可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.componet(&apos;Father&apos;, &#123;</span><br><span class="line">	template</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>局部注册</p>
+<p>在实例中间使用 components:{ }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el: &apos;#app&apos;,</span><br><span class="line">	components: &#123;</span><br><span class="line">		&apos;Father&apos;: &#123;</span><br><span class="line">		   template: &apos;&lt;div&gt;局部组粗&lt;/div&gt;&apos;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>组件的嵌套</p>
+<p>   在父组件里放子组件： 将子组件以标签的形式放在父组件中</p>
+<p>全局嵌套</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">	&lt;Father&gt;&lt;/Father&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;template id=&quot;father&quot;&gt;</span><br><span class="line">	&lt;h3&gt;这里是父组件模板&lt;/h3&gt;</span><br><span class="line">	&lt;/Son&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">Vue.component(&apos;Father&apos;,&#123;</span><br><span class="line">	template: &apos;#father&apos;</span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(&apos;Son&apos;, &#123;</span><br><span class="line">	template:&apos;&lt;div&gt; son &lt;/div&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>局部嵌套</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">new Vue([</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    compoents: &#123;</span><br><span class="line">		template: &apos;&lt;div&gt; father 组件 &lt;/Son&gt; &lt;/div&gt;&apos;,</span><br><span class="line">		components: &#123;</span><br><span class="line">			&apos;Son&apos;: &#123;</span><br><span class="line">				template: &apos;&lt;div&gt; son 组件 &lt;/div&gt;</span><br><span class="line">			 &#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p>is  规则</p>
+<p>ul&gt;li ol&gt;li table&gt;tr&gt;td select&gt;option</p>
+<p>如上直属父子级如果直接组件以标签化形式使用，会出现 bug</p>
+<p>解决：需要通过   is 属性来绑定一个组件</p>
+<p>组件的一些特殊使用规则  【</p>
+<h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h2 id="1-为什么要进行组件通信？"><a href="#1-为什么要进行组件通信？" class="headerlink" title="1. 为什么要进行组件通信？"></a>1. 为什么要进行组件通信？</h2><ul>
+<li>每个组件都是一个<strong>独立功能</strong>的整体，当我们要将这些组件拼接在一起时，就需要在这些组件之间建立通信</li>
+</ul>
+<h2 id="2-组件的通信有哪些？"><a href="#2-组件的通信有哪些？" class="headerlink" title="2 组件的通信有哪些？"></a>2 组件的通信有哪些？</h2><h3 id="1-父子组件通信"><a href="#1-父子组件通信" class="headerlink" title="1. 父子组件通信"></a>1. 父子组件通信</h3><p>​    使用 props 来实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.在父组件的模板中将数据用单项数据绑定的形式(v-bind)绑定到子组件上</span></span><br><span class="line"> &lt;Son :aa = <span class="string">"money"</span>  :maskFlag = <span class="string">"maskFlag"</span>/&gt;</span><br><span class="line"> Vue.component(<span class="string">'Father'</span>,&#123;</span><br><span class="line">    template: <span class="string">'#father'</span>,</span><br><span class="line">    data () &#123; </span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        money: <span class="number">2000</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  Vue.component(<span class="string">'Son'</span>,&#123;</span><br><span class="line">    template: <span class="string">'#son'</span>,</span><br><span class="line">    props: [<span class="string">'aa'</span>,<span class="string">'maskFlag'</span>]          </span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-子父组件通信"><a href="#2-子父组件通信" class="headerlink" title="2.  子父组件通信"></a>2.  子父组件通信</h3><p>​    使用做自定义事件通信</p>
+<ol>
+<li><p>在父组件模板中，通过事件绑定的形式，绑定一个自定义事件在子组件身上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Son @a = &apos;fn&apos;&gt;  //注意： fn 是在父组件配置项 methods 中定义</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子组件的配置项 methods 中写一个事件处理程序，在事件处理程序中 使用 $emit() 触发父组件中绑定的自定义事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;Son&apos;,&#123;</span><br><span class="line">   template: &apos;#son&apos;,</span><br><span class="line">   props: [&apos;aa&apos;,&apos;maskFlag&apos;]          </span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将子组件定义事件处理函数 ，绑定到子组件的按钮上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3-非父子组件通信"><a href="#3-非父子组件通信" class="headerlink" title="3.  非父子组件通信"></a>3.  非父子组件通信</h3><h4 id="1-ref-链"><a href="#1-ref-链" class="headerlink" title="1.ref  链"></a>1.ref  链</h4><p>父组件通过 ref 链得到一个子组件的数据，在把数据发送到另一个子组件上，就可以实现非父子组件的通信，当是如果层级太多，就比较繁琐</p>
+<h4 id="2-bus-事件总线"><a href="#2-bus-事件总线" class="headerlink" title="2.bus 事件总线"></a>2.bus 事件总线</h4><p>通过 bus.$on 来定义事件，通过$emit 来触发事件</p>
+<ol>
+<li><p>在其中一个组件的 mounted 钩子函数上进行事件声明</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'sma'</span>, &#123;</span><br><span class="line">   template: <span class="string">'#sma'</span>,</span><br><span class="line">   data() &#123;</span><br><span class="line">     <span class="keyword">return</span> &#123;</span><br><span class="line">       flag: <span class="literal">false</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   mounted () &#123; <span class="comment">//在 mounted 钩子函中事件声明  </span></span><br><span class="line">     <span class="keyword">let</span> _this = <span class="keyword">this</span></span><br><span class="line">     bus.$on(<span class="string">'aa'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   <span class="comment">// 事件声明 </span></span><br><span class="line">       _this.flag = <span class="literal">true</span>;</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在另一个组件中，通过 bus.$emit(‘aa’) 来触发这个事件</p>
+</li>
+</ol>
+<h3 id="4-多组件状态共享-（-多组件共有同一个数据）"><a href="#4-多组件状态共享-（-多组件共有同一个数据）" class="headerlink" title="4.  多组件状态共享 （ 多组件共有同一个数据）"></a>4.  多组件状态共享 （ 多组件共有同一个数据）</h3><p>vuex</p>
+<h3 id="5-非常规通信方式"><a href="#5-非常规通信方式" class="headerlink" title="5.  非常规通信方式"></a>5.  非常规通信方式</h3><p>不推荐：因为 mvvm 框架是单项数据流</p>
+<h4 id="1-父子通信"><a href="#1-父子通信" class="headerlink" title="1. 父子通信"></a>1. 父子通信</h4><p>父组件窗体一个 对象类型 给子组件，子组件通过 props 接收，</p>
+<p>会发现：子组件修改数据时，父组件的数据也会发生改变</p>
+<p>因为父组件传递给子组件的是一个对象引用地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;Father&gt;&lt;/Father&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;template id=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h3&gt;这是fatcher 组件&lt;/h3&gt;</span><br><span class="line">      &lt;p&gt;父组件小金库 ---&#123;&#123; xiaojingku.money &#125;&#125;&lt;/p&gt;</span><br><span class="line">      &lt;Son :xiaojingku=&quot;xiaojingku&quot;&gt;&lt;/Son&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;template id=&quot;son&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h3&gt;这是 son组件&lt;/h3&gt;</span><br><span class="line">      &lt;button &gt;give&lt;/button&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; v-model=&quot;xiaojingku.money&quot;&gt;</span><br><span class="line">      &lt;p&gt;son : &#123;&#123; xiaojingku.money&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-子父通信"><a href="#2-子父通信" class="headerlink" title="2. 子父通信"></a>2. 子父通信</h4><p>父组件将一个方通过属性绑定的形式给了子组件，子组件用 props 接收方法，在子组件中调用方法并传参</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;Father&gt;&lt;/Father&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;template id=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h3&gt;这是fatcher 组件&lt;/h3&gt;</span><br><span class="line">      &lt;Son :add=&quot;add&quot;&gt;&lt;/Son&gt;  //1.将方法绑定到子组件上</span><br><span class="line">      &#123;&#123; n &#125;&#125;  //2000</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;template id=&quot;son&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h3&gt;这是 son组件&lt;/h3&gt;</span><br><span class="line">      &lt;button @click=&quot;add(money)&quot;&gt;give&lt;/button&gt;  //3. 子组件调用传来的方法，并传值</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">  Vue.component(&apos;Father&apos;, &#123;</span><br><span class="line">    template: &apos;#father&apos;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        n: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      add (val) &#123;</span><br><span class="line">        this.n = val;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  Vue.component(&apos;Son&apos;, &#123;</span><br><span class="line">    template: &apos;#son&apos;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        money: 1000</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    props: [&apos;add&apos;]   //2. 子组件接收方法</span><br><span class="line">  &#125;)</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="3-动态组件"><a href="#3-动态组件" class="headerlink" title="3. 动态组件"></a>3. 动态组件</h2><ol>
+<li>什么是动态组件？</li>
+</ol>
+<p>​    可以修改的组件</p>
+<ol start="2">
+<li>使用</li>
+</ol>
+<p>​    vue 提供过了 一个 compoent 标签（组件）  + is  属性 来实现  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>  @<span class="attr">click</span>=<span class="string">"change"</span> &gt;</span>切换<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span>       <span class="tag">&lt;<span class="name">kee-alive</span>&gt;</span> 组件 可以对组件进行浏览器缓存，在切换组件时就可以提高效率。</span><br><span class="line">        <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span> = <span class="string">"type"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.component(<span class="string">'A'</span>,&#123;</span><br><span class="line">      template: <span class="string">'&lt;div&gt;A组件啊&lt;/div&gt;'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    Vue.component(<span class="string">'B'</span>,&#123;</span><br><span class="line">      template: <span class="string">'&lt;div&gt;B组件啊啊&lt;/div&gt;'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">      el: <span class="string">'#app'</span>,</span><br><span class="line">      data: &#123;</span><br><span class="line">        type: <span class="string">'A'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        change()&#123;</span><br><span class="line">          <span class="keyword">this</span>.type = <span class="keyword">this</span>.type === <span class="string">'A'</span> ? <span class="string">'B'</span>:<span class="string">'A'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>语法糖： 对代码的另一种语法实现，功能保持不变，提高代码的可读性，减少出错</p>
+<p>组件中data定义是一个函数？</p>
+<pre><code>因为组件是一个独立的个体，应该拥有的自己独立的作用域数据。
+</code></pre><p>为什么data 为什么要有 return，return 的还是一个对象？</p>
+<pre><code>1. 因为Vue 是通过observer 来观察 data选项的，所以必须要有 返回值。
+2. 应为Vue 要通过 es5 的Object.defineProperty 属性对对象 进行getter 和 setter 设置，这个属性传的第一个参数是一个对象。
+</code></pre><p>自定义事件的发布</p>
+<ol>
+<li><p>通过$on 发布， $emit 触发</p>
+<p>vm.$on(自定义事件名称，自定义事件处理函数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vm.$on(&apos;a&apos;, function() &#123;</span><br><span class="line">	console.log( &apos;aaa&apos;);</span><br><span class="line">&#125;)</span><br><span class="line">vm.$emit(自定义事件的名称，自定义事件需要的参数)；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把事件在组件上定义，通过 $emit() 触发</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>app实例的手动挂载 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">&#125;).$mount(&apos;#app&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="属性验证"><a href="#属性验证" class="headerlink" title="属性验证"></a>属性验证</h3><ol>
+<li><p>props: [ ‘msg’ ] 只是单纯的接收了一个父组件传来的数据，没有验证</p>
+</li>
+<li><p>props: { attr: attType } 进行数据类型验证</p>
+</li>
+<li><p>props: { type: typeType, defalut: value } 为数据设置初始值</p>
+</li>
+<li><p>props: { varlidator ( val ) { return boolean }}   对数据进行条件比较，return booblean</p>
+</li>
+<li><p>第三方包： vue-validata vee-validate…</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'Son'</span>, &#123;</span><br><span class="line">   template: <span class="string">'#son'</span>,</span><br><span class="line">   props:&#123;</span><br><span class="line">     <span class="comment">// key: value</span></span><br><span class="line">     <span class="string">'money'</span>: <span class="built_in">Number</span>,</span><br><span class="line">     <span class="string">'n'</span>: &#123;</span><br><span class="line">       validator ( val ) &#123; <span class="comment">//属性验证函数，一般用于条件比较</span></span><br><span class="line">         <span class="keyword">return</span> val &gt; <span class="number">200</span></span><br><span class="line">       &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="string">'num'</span>: &#123;</span><br><span class="line">       type: <span class="built_in">Number</span>,</span><br><span class="line">       <span class="keyword">default</span>: <span class="number">200</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>过滤器</p>
+<ol>
+<li><p>什么是过滤器？</p>
+<ul>
+<li><p>用来格式化数据的一个函数 </p>
+<p>vue 1.x 借鉴啦 angular， 提供了 10 个过滤器（ 日期，小数点位数保留，货币，大小写)</p>
+<p>vue 2.x 废弃了 这10个过滤器，提供自定义过滤器的方式</p>
+</li>
+</ul>
+</li>
+<li><p>使用方式</p>
+<p>过滤器要想获得我们的数据，要通过一个叫 ‘管道符 |  ’ 来获取数据</p>
+<p>过滤器是对已有的数据进行格式化，必须先得到数据在可视化</p>
+<pre><code>1. 全局定义过滤器
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Vue.filter(过滤器名称, 回调函数)；</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; time | timeFilter(&quot;/&quot;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   Vue.filter(&apos;timeFilter&apos;, (val, type) =&gt; &#123;</span><br><span class="line">     let data = new Date();</span><br><span class="line">     return data.getFullYear() + type + ( data.getMonth() + 1 ) + type + data.getDate();</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="2">
+<li><p>局部定义过滤器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;p&gt; &#123;&#123;time | timeFilter(&apos;-&apos;)&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      time: Date.now()</span><br><span class="line">    &#125;,</span><br><span class="line">    filters: &#123;</span><br><span class="line">      &apos;timeFilter&apos;: function (val, type) &#123;</span><br><span class="line">        let date = new Date();</span><br><span class="line">        return date.getFullYear() + type + date.getMonth() + 1 + type + date.getDate();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>solot 插槽</p>
+</li>
+<li><p>作用/概念： 预先将将来要是用的内容进行保留</p>
+</li>
+<li>具名插槽：</li>
+</ol>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank"></a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'meijuna.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2022 MeiJuna的博客 京ICP备103982号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://meijuna.top ，围观MeiJuna的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn 🚀\n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","hOffset":56,"vOffset":-20,"bottom":"-20;","width":100,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

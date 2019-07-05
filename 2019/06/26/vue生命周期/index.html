@@ -61,7 +61,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2019-06-26T14:01:45.978Z" itemprop="dateUpdated">2019-06-26</time>
+    更新 <time datetime="2019-06-27T11:06:53.980Z" itemprop="dateUpdated">2019-06-27</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -73,12 +73,13 @@
     <div class="article">
       <div class="content">
         
-        <h1 id="Vue-的生命周期"><a href="#Vue-的生命周期" class="headerlink" title="Vue 的生命周期"></a>Vue 的生命周期</h1><h2 id="1-什么是生命周期？"><a href="#1-什么是生命周期？" class="headerlink" title="1.  什么是生命周期？"></a>1.  什么是生命周期？</h2><p>​    生命周期是组件从创建到销毁的一个过程，这个过程中，我们在每个特定的阶段会触发一些方法，这些方法叫声明钩子 or 组件钩子</p>
-<h2 id="2-为什么学习生命周期？"><a href="#2-为什么学习生命周期？" class="headerlink" title="2.  为什么学习生命周期？"></a>2.  为什么学习生命周期？</h2><p>​    因为我们想在生命周期钩子中实现项目功能，那么必须知道每一个生命周期钩子的具体通途</p>
+        <h1 id="Vue-的生命周期"><a href="#Vue-的生命周期" class="headerlink" title="Vue 的生命周期"></a>Vue 的生命周期</h1><h2 id="1-什么是生命周期？"><a href="#1-什么是生命周期？" class="headerlink" title="1.  什么是生命周期？"></a>1.  什么是生命周期？</h2><p>​    vue的生命周期是组件从创建到销毁的一个过程，这个过程中，我们在每个特定的阶段会触发一些方法，这些方法有协议功能。我们把这些方法叫生命周期钩子函数 or 组件钩子</p>
+<h2 id="2-为什么学习生命周期？"><a href="#2-为什么学习生命周期？" class="headerlink" title="2.  为什么学习生命周期？"></a>2.  为什么学习生命周期？</h2><p>​    因为我们要想在生命周期钩子中实现项目功能，那么必须知道每一个生命周期钩子的具体功能。</p>
 <h2 id="3-这个声明周期是谁的声明周期？"><a href="#3-这个声明周期是谁的声明周期？" class="headerlink" title="3.  这个声明周期是谁的声明周期？"></a>3.  这个声明周期是谁的声明周期？</h2><p>​    生命周期指的是组件的生命周期</p>
 <h2 id="4-vue-生命周期-分为-三个-阶段"><a href="#4-vue-生命周期-分为-三个-阶段" class="headerlink" title="4. vue 生命周期 分为 三个 阶段"></a>4. vue 生命周期 分为 三个 阶段</h2><p>​    Vue 生命周期分为 <strong>初始化</strong>， <strong>运行中</strong>  <strong>销毁</strong>   <strong>三个阶段   8个钩子函数</strong></p>
+<p>​       声明周期钩子函数不能使用箭头函数来定义，因为所有的生命周期钩子自动绑定 <code>this</code> 上下文到实例中，而箭头函数可能影响 this 的指向。</p>
 <p><img src="/2019/06/26/vue生命周期/vue-生命周期/lifecycle.png" alt=""></p>
-<h3 id="1-始化化阶段："><a href="#1-始化化阶段：" class="headerlink" title="1.始化化阶段："></a>1.始化化阶段：</h3><h4 id="1-beforeCreate"><a href="#1-beforeCreate" class="headerlink" title="1. beforeCreate"></a>1. beforeCreate</h4><p>​    组件创建前触发，目的是为了组件的生命周期 和 组件中的事件 做准备。</p>
+<h3 id="1-始化化阶段："><a href="#1-始化化阶段：" class="headerlink" title="1.始化化阶段："></a>1.始化化阶段：</h3><h4 id="1-beforeCreate"><a href="#1-beforeCreate" class="headerlink" title="1. beforeCreate"></a>1. beforeCreate</h4><p>​    组件创建前，目的是为了组件的生命周期 和 组件中的事件 做准备。</p>
 <p>​     数据没有获得，真实 dom 也没有渲染出来的</p>
 <p>​    可以做数据请求，提供一次数据修改的机会</p>
 <h4 id="2-created"><a href="#2-created" class="headerlink" title="2. created"></a>2. created</h4><p>​    组件创建结束</p>
@@ -91,27 +92,63 @@
 <h4 id="4-mounted"><a href="#4-mounted" class="headerlink" title="4. mounted"></a>4. mounted</h4><p>​    1. 组件挂载结束</p>
 <p>​    2. 数据有了，VDOM 渲染出了真实DOM </p>
 <p>​    3.可以数据请求，修改数据 </p>
-<p>​    4.执行了一次</p>
-<p>​    可以进行真实dom的操作了 （可以进行第三方库的实例化啊了）</p>
+<p>​     有了真实DOM，一般用于静态的第三方库的实例化</p>
 <p>初始化阶段总结：</p>
 <ol>
 <li>数据请求一般写在 created 里面, 因为这时候刚好能得到数据</li>
 <li>第三方实例化 一般写在 mounted 中，因为 mounted 能够获得真实 DOM</li>
 </ol>
-<h3 id="2-运行中阶段"><a href="#2-运行中阶段" class="headerlink" title="2.  运行中阶段"></a>2.  运行中阶段</h3><p>​    触发条件：数据发生改变才触发</p>
+<h3 id="2-运行中阶段"><a href="#2-运行中阶段" class="headerlink" title="2.  运行中阶段"></a>2.  运行中阶段</h3><p>​    触发条件：数据发生改变才触发，可以触发多次 </p>
 <h4 id="1-beforeUpdata"><a href="#1-beforeUpdata" class="headerlink" title="1. beforeUpdata"></a>1. beforeUpdata</h4><ol>
 <li><p>更新前</p>
 <p>任务：重新渲染 VDOM, 然后通过 dif 算法比较两次VDOM, 生成 path 补丁对象</p>
-</li>
-<li><p>可以触发多次 </p>
 </li>
 </ol>
 <h4 id="2-update"><a href="#2-update" class="headerlink" title="2. update"></a>2. update</h4><ol>
 <li>更新结束</li>
 <li>更新后的数据和真实的DOM得到了</li>
-<li>一般进行动态数据获取 （第三方库实例化）</li>
+<li>一般进行动态数据获取 （可以进行第三方库实例化）</li>
 </ol>
-<h3 id="3-销毁阶段"><a href="#3-销毁阶段" class="headerlink" title="3. 销毁阶段"></a>3. 销毁阶段</h3>
+<h3 id="3-销毁阶段"><a href="#3-销毁阶段" class="headerlink" title="3. 销毁阶段"></a>3. 销毁阶段</h3><p>​    触发条件： 当组件销毁时触发</p>
+<h4 id="1-beforeDestroy"><a href="#1-beforeDestroy" class="headerlink" title="1. beforeDestroy"></a>1. beforeDestroy</h4><h4 id="2-destroyed"><a href="#2-destroyed" class="headerlink" title="2. destroyed"></a>2. destroyed</h4><p>两个钩子功能是一致，没什么区别，作用是做善后的，比如组件销毁后，清除组件的定时器，删除第三方实例</p>
+<h4 id="3-vue-的销毁有两种形式"><a href="#3-vue-的销毁有两种形式" class="headerlink" title="3. vue 的销毁有两种形式"></a>3. vue 的销毁有两种形式</h4><pre><code>1. 外部销毁——通过开关的方式
+
+    外部销毁不仅能销毁组件，也能销毁该组件的 DOM 结构
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;button @click=&quot;flag = !flag&quot;&gt;点击&lt;/button&gt;  //改变数据，创建和销毁组件</span><br><span class="line">    &lt;Hello v-if=&quot;flag&quot;&gt;&lt;/Hello&gt;  //使用  v-if 根据数据创建销毁</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;template id=&quot;hello&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;hello&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"> &lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+2. 内部销毁——通过调用 $destroy 方法 
+
+    内部销毁只能销毁组件， 当不能销毁组件的DOM结构。
+
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;tempate id=<span class="string">"hello"</span>&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;button @click=<span class="string">"clear"</span>&gt;销毁&lt;<span class="regexp">/button&gt;   /</span><span class="regexp">/调用方法销毁组件</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/tempate&gt;</span></span><br><span class="line"><span class="regexp">Vue.component('Hello',&#123;</span></span><br><span class="line"><span class="regexp">   template: '#hello',</span></span><br><span class="line"><span class="regexp">   methods:&#123;</span></span><br><span class="line"><span class="regexp">    clear() &#123;             </span></span><br><span class="line"><span class="regexp">      this.$destroy();  /</span><span class="regexp">/通过 $destroy() 方法销毁组件</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;，</span></span><br><span class="line"><span class="regexp">    mouted() &#123;</span></span><br><span class="line"><span class="regexp">         this.time = setInterval( () =&gt; &#123;   /</span><span class="regexp">/给组件添加定时器</span></span><br><span class="line"><span class="regexp">           console.log('18094')</span></span><br><span class="line"><span class="regexp">         &#125;)</span></span><br><span class="line"><span class="regexp">       &#125;,</span></span><br><span class="line"><span class="regexp">       beforeDestroy() &#123;               /</span><span class="regexp">/组件销毁后， beforeDestroy() destroyed() 都会执行</span></span><br><span class="line"><span class="regexp">         console.log('beforeDestroy');</span></span><br><span class="line"><span class="regexp">         clearInterval( this.time )     /</span><span class="regexp">/组件销毁后，清除组件的计时器</span></span><br><span class="line"><span class="regexp">         document.querySelector('#app').remove();  /</span><span class="regexp">/手动删除</span></span><br><span class="line"><span class="regexp">       &#125;,</span></span><br><span class="line"><span class="regexp">       destroyed () &#123;</span></span><br><span class="line"><span class="regexp">         console.log('destroyed');</span></span><br><span class="line"><span class="regexp">       &#125;</span></span><br></pre></td></tr></table></figure>
+
+   静态数据第三方库实例化，写在 mouted  中
+
+   动态数据第三方库实例化，写在 update   中
+
+   优化问题：
+
+   ​    将动态数据的第三库实例化放在 update 中是由弊端的，弊端是数据改变时，update 函数会多次触发，第三方库会重复实例化，造成性能浪费。
+
+   解决：
+
+    1.  判断实例是否存在，存在则不实例化  if( this.mySwiper) return false
+
+       - 弊端： 多个实例化判断可能会相互影响
+
+       2.   将实例化放在异步队列中
+
+            1.   将实例化使用 setTimeout 加入异步队列， 放在 created 钩子的数据请求中。
+
+            2.   nextTick: 表示组件渲染结束后，nextTick（）才会执行。
+
+             使用 Vue.nextTick(回调)  this.$nextTick()
+
+   总结：
+
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">静态数据第三方库实例化，写在 mouted  中</span><br><span class="line"></span><br><span class="line">动态数据第三方库实例化，用异步的方式，写在 created 函数中</span><br></pre></td></tr></table></figure>
+</code></pre>
       </div>
         <div class="support-author">
           <p>感谢您的阅读。 🙏

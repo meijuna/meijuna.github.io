@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="MeiJuna的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="../source/img/favicon.ico" /> -->
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>vue 自定义组件</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/123456.js","daovoice");daovoice('init',{app_id: "123456"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">MeiJuna</a>
+  <a class="face-img" href="/">
+    <img src="https://avatars0.githubusercontent.com/u/28977046?s=400&amp;u=430ddb4a4bb56956162100daf3ef6f79a5b65bd2&amp;v=4">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    vue 自定义组件
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-06-26T14:19:01.000Z" itemprop="datePublished">2019-06-26</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-07-05T01:15:18.365Z" itemprop="dateUpdated">2019-07-05</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <ol>
+<li>vue 的路由就是用webpakc的注释语法</li>
+</ol>
+<ol>
+<li>webpack 一个功能性的模块 都会以一个闭包的形式，保存在 main.js 中</li>
+<li><p>开发环境的打包，</p>
+</li>
+<li><p>v-text 和  插值表达式的区别：  </p>
+<ol>
+<li>v-text 会替换元素中的内容， 插值表达式只会替换自己的占位符，整个元素的内容不会清空</li>
+<li>网速太慢会先显示插值表达式，在显示内容。而v-text 不会显示内容。</li>
+</ol>
+</li>
+<li><p>事件修饰符： </p>
+<ol>
+<li>top ： 阻止事件冒泡</li>
+<li>prevent ：阻止默认时间</li>
+<li>.capture  ：事件捕获模式</li>
+<li>.self:  当前事件只对该元素本手有效</li>
+</ol>
+<p>self 和 . stop 事件修饰符的区别？</p>
+<p>.self 只会阻止本身的时间冒泡，不会阻止整个的实际那冒泡</p>
+</li>
+</ol>
+<p>使用 class </p>
+<ol>
+<li><p>数组的形式 ：</p>
+<p>:class = “[‘.class’,’class2’]”  //没啥优点，了解</p>
+</li>
+<li><p>表达式的形式：</p>
+<p>：class=”[‘.class’, ‘class2’, flag?’active’: ‘ ‘]”</p>
+</li>
+<li><p>数组嵌套的形式：用对象来替代三元表达式，提高可读性</p>
+<p>:class =”[‘.class’, ‘class2’,{ ‘active’: flag }]”</p>
+</li>
+<li><p>直接使用对象的形式：</p>
+<p>:calss = “{red: true, class: true, class2: flag}”</p>
+</li>
+</ol>
+<p>v-show 和 v-if 有什么区别？</p>
+<p>​    v-if 和 v-show 都是改变元素的显示与隐藏，v-if  通过元素的创建和销毁，有较高切换性能消耗。而v-show 是改变元素的 dispaly 的属性进行显示和隐藏的。有较高的初始渲染消耗。</p>
+<p>如果元素可能永远不会被显示出来，推荐使用 v-if</p>
+<p>如果元素需要频繁的切换，推荐使用 v-show</p>
+<p>路由</p>
+<ol>
+<li><p>你的项目怎么匹配错误路由的？<br>​    我在路由表最下面配置一个两个*号的路径，redirect 重定向到错误路由</p>
+</li>
+<li><p>在页面中，可以使用 router-like 做页面的跳转，router-view 做页面的展示</p>
+<p>router-link 身上的属性： </p>
+</li>
+</ol>
+<p>​            to : 表示路由跳转的路径</p>
+<p>​            tag: 转换为 标签</p>
+<p>​            keep-alive:做缓存</p>
+<p>​               active-class ：激活路由</p>
+<ol start="3">
+<li>二级路由怎么配？</li>
+</ol>
+<p>​    在路由配置项中，用一个chlidren 数组来配置，</p>
+<ol start="4">
+<li>什么是命名路由？</li>
+</ol>
+<p>​    在路由配置中 设置 name 属性，这个名字叫命名路由，有了命名路由之后，跳转的 :to 属性就可以用对象的形式了： :to { name: ‘login ‘}</p>
+<h4 id="路由的导航守卫"><a href="#路由的导航守卫" class="headerlink" title="路由的导航守卫"></a>路由的导航守卫</h4><ol>
+<li>导航守卫的作用：</li>
+</ol>
+<p>​    导航守卫是用来监听项目中路由的变化情况的</p>
+<ol start="2">
+<li><p>你的项目中路由是怎么监听怎么处理的？ （指的是导航守卫）</p>
+</li>
+<li><p>导航守卫有三种使用形式：</p>
+</li>
+<li><p>全局导航守卫</p>
+<p>三个钩子函数：</p>
+<p>beforeEarch()</p>
+<p>afterEarch()</p>
+<p>befored()</p>
+</li>
+<li><p>路由独享守卫</p>
+</li>
+</ol>
+<p>​    beforeEnter( to, from, next )</p>
+<p>​    指的是写在当前组件的路由配置项里面，它只能监听到与这个组件相关的路由变换情况</p>
+<ol start="3">
+<li><p>组件内的守卫</p>
+<p>组件内守卫有三种形式：</p>
+<ol>
+<li><p>前置前置守卫   beforeRouterEnter( (to, from ,next ) =&gt; {})</p>
+<ul>
+<li><p>导航进入组件时调用</p>
+</li>
+<li><p>因为组件此时没有创建，所以 this 是访问不到的，需要通过 next(vm=&gt;) 访问</p>
+</li>
+<li><p>案例： 数据预载 （ 进入组件前就获取数据）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">net(vm =&gt; &#123;  //vm指的是组件</span><br><span class="line">	const result = JSON.parse(res.data.slice(7, -1).rp_result.categorys)</span><br><span class="line">	vm.$set(vm.category, &apos;categorys&apos;, result) </span><br><span class="line">&#125;)</span><br><span class="line">工作在哪？ 工作多长时间，做了哪些项目用到的技术，</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>后置守卫 </p>
+<ul>
+<li><p>当离开组件时调用</p>
+</li>
+<li><p>this 是可以访问的</p>
+</li>
+</ul>
+</li>
+<li><p>更新守卫</p>
+</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">大家下午好，我叫梅伟军，今天给大家分享下关于原型和原型链的方面的知识，虽然自己理解的也不是全面，但是我会把知道尽可能的分享给大家，也算是回顾一下以前学的知识，希望同学们能有所搜获。</span><br></pre></td></tr></table></figure>
+<pre><code>各位面试官下午好，我先自己我介绍一下，我叫梅伟军，来自浙江丽水，毕业于浙江机电职业技术学院计算机专业，是今年的应届毕业生，我想从以下两个方面介绍自己，在校期间，自学了很多前端方面的课程，写的最多的就是静态页面，也写过H5和响应式的页面,和老师一起开发了两个综合的项目。也会定期的对所学的知识进行总结，发表技术博客。毕业后，在电鲸网络做前端开发，工作期间主要负责移动端的页面和脚本的交互，还有配合后端，接收后端接口，实现数据交互。另我在这段实习的也让我成长了很多，学习了很多的知识，接触并使用了 vue，regeat等框架，并能熟练的使用框架开发项目。对以前掌握的技能有了更深入的认识。工作之余我也会通过视频，书籍等渠道充实前端知识。最后，虽然我没有很长的工作经验，当我认为我还是有很大的潜力的，希望能加入贵公司贡献自己的一份力量，与公司一起进步。以上是我的自我介绍，谢谢。
+</code></pre><p>   路由的穿插</p>
+<p>   动态路由？</p>
+<p>   ​    url中路由是改变的，当是改变路由公用一个组件。</p>
+<p>配合后端工程师增加页面的JS交互效果以及CSS排版</p>
+<p>   各位面试官下午好，我</p>
+<p>   ​    </p>
+<p>​     </p>
+<p>​    </p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://888.com/index.html" target="_blank"></a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '8888a8888',
+    clientSecret: '8888886666666',
+    repo: 'meijuna.github.io',
+    owner: 'admin',
+    admin: ['admin'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2013-2022 MeiJuna的博客 京ICP备103982号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://meijuna.top ，围观MeiJuna的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn 🚀\n\n如果喜欢可以 star 支持一下 ❤️~\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","hOffset":56,"vOffset":-20,"bottom":"-20;","width":100,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

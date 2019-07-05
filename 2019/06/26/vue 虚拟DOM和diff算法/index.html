@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>localStroage和 sessionStorage以及 cookie的区别</title>
+	<title>vue 虚拟DOM和diff算法</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -49,7 +49,7 @@
     
   
   <h1 class="title">
-    localStroage和 sessionStorage以及 cookie的区别
+    vue 虚拟DOM和diff算法
   </h1>
   
 
@@ -57,11 +57,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-06-23T04:29:51.000Z" itemprop="datePublished">2019-06-23</time>
+        <time datetime="2019-06-26T14:20:01.000Z" itemprop="datePublished">2019-06-26</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-07-03T00:35:49.712Z" itemprop="dateUpdated">2019-07-03</time>
+    更新 <time datetime="2019-07-02T15:05:34.881Z" itemprop="dateUpdated">2019-07-02</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -73,26 +73,40 @@
     <div class="article">
       <div class="content">
         
-        <h2 id="1-localStroage-和-sessionStorage-以及-cookie-的区别。"><a href="#1-localStroage-和-sessionStorage-以及-cookie-的区别。" class="headerlink" title="1. localStroage 和 sessionStorage 以及 cookie 的区别。"></a>1. localStroage 和 sessionStorage 以及 cookie 的区别。</h2><p>   首先总的来说，三者都是用于持久化数据存储的手段，都是存储在浏览器端，且同源（协议，端口号，都域名相同）</p>
-<p>​     localStorage 和s essionStorage 都是Web存储，大小5M左右，完全存储在客户端，它们是因为本地存储数据而存在的</p>
-<p>​     cookies也是存储在浏览器端的，大小不超过4k，作为http规范的一部分，它是通过浏览器的请求将数据传给服务器的。</p>
-<p>   localStorage属于永久性存储，而 sessionStorage 属于当会话结束的时候，存储的值会被清空，而cookie是通过设置过期时间来存储的。</p>
-<h2 id="2-什么是localStorage-本地存储"><a href="#2-什么是localStorage-本地存储" class="headerlink" title="2. 什么是localStorage(本地存储)"></a>2. 什么是localStorage(本地存储)</h2><p>在HTML5中，新加入了一个 localStorage 特性，这个特性主要是用来作为本地存储来使用的，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中  localStorage 会有所不同。</p>
-<h3 id="2-1-localStorage的特点"><a href="#2-1-localStorage的特点" class="headerlink" title="2.1 localStorage的特点"></a>2.1 localStorage的<strong>特点</strong></h3><ul>
-<li><p>localStorage拓展了cookie的 4K 限制。</p>
+        <p>虚拟DOM &amp;&amp; diff 算法</p>
+<p>Vue 是一个 mvvm 框架，Vue高性能的原因之一是使用的 vdom </p>
+<ol>
+<li><p>虚拟dom 是什么？</p>
+<p>  是 js 中的对象模型，用对象的结构来模拟真实DOM</p>
 </li>
-<li><p>localStorage会将第一次请求的数据直接存储到本地，这个相当于一个5M大       小的针对于前端页面的数据库，但只有在高版本的浏览器中才支持的。</p>
+<li><p>虚拟DOM的使用基本流程</p>
+<p>  先获取数据 ，在创建 jsx 语法糖，然后根据 render 函数将 jsx 生成虚拟对象结构再根据对象结构生成真实的DOM 。当数据改变时， 第二次生成虚拟DOM，然后通过 diff 算法进行对比，生成 path 对象。根据key将patch对象使用render函数渲染到页面中改变的结构上，而其他没有改变的地方是不做任何修改的 ——也叫虚拟dom的 惰性原则 。</p>
 </li>
-<li><p>目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换。</p>
+<li><p>什么是 jsx?<br>  就是 javascript + xml ，可以在 js 中可以写 标签结构</p>
 </li>
-<li><p>localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡。</p>
+<li><p>diff 算法是什么？</p>
+<p>diff 来源 于后端，是比较两个文件的差异的算法。</p>
+<p>前端将其应用到了 虚拟dom 当中去， 将 diff 算法放在了 patch.js 文件中，使用 js 来对两个虚拟DOM对象进行比较。</p>
+<p>diff 算法运行结束，返回的是一个补丁对象（patch对象）</p>
+<p>diff 算法是同级比较，给每一个层级打一个数字标记，这个标记就是 key ，根据key 进行同级比较，父级元素比完比子元素，直到没有子元素。</p>
+</li>
+<li><p>什么是key?</p>
+<ul>
+<li>跟踪每个节点身份，从而重用和重新排序现有的元素</li>
+<li><p>理想的 key 值都是每个项都有的且唯一的 id</p>
+<p>为什么列表循环要加key?</p>
+<p>​    需要给每一个节点添加一个唯一的标识key，vue 通过key 进行重用和重新排序现有元素。</p>
+<p>key要注意什么?</p>
 </li>
 </ul>
-<ol start="2">
-<li><h3 id="2-localStroage读写及删除操作。"><a href="#2-localStroage读写及删除操作。" class="headerlink" title="2 localStroage读写及删除操作。"></a>2 localStroage读写及删除操作。</h3></li>
+<ol>
+<li><p>类型只能是 number 和String</p>
+</li>
+<li><p>通过v-bind 属性绑定的形式来    指定key 的值</p>
+</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//localStorage的写入有三种方法</span></span><br><span class="line"><span class="built_in">window</span>.localStorage.key=value</span><br><span class="line"><span class="built_in">window</span>.localStorage[key]=value</span><br><span class="line"><span class="built_in">window</span>.localStorage.setItem(key,value) <span class="comment">//推荐</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取 localStorage</span></span><br><span class="line">   <span class="built_in">window</span>.localStorage.key</span><br><span class="line">   <span class="built_in">window</span>.localStorage[key]</span><br><span class="line">   <span class="built_in">window</span>.localStorage.getItem(key) <span class="comment">//推荐</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// localStorage的删除</span></span><br><span class="line"><span class="comment">//将localStorage中的某个键值对删除</span></span><br><span class="line"><span class="built_in">window</span>.localStorage.removeItem(<span class="string">"a"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//将localStorage的所有内容清除</span></span><br><span class="line"><span class="built_in">window</span>.localStorage.clear();</span><br></pre></td></tr></table></figure>
-<p>​    </p>
+</li>
+</ol>
 
       </div>
         <div class="support-author">
